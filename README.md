@@ -34,7 +34,7 @@ A jornada simula um aprendizado **geológico**: do átomo ao sistema. Cada bloco
 
 ### A Descida ao Metal
 
-
+```
 ┌─────────────────────────────────────────────────────────────┐
 │    [Bloco 0] Fundição do Ferro (170)                        │
 │    Tipos, ponteiros, memória → "Eu controlo cada byte"      │
@@ -81,7 +81,7 @@ A jornada simula um aprendizado **geológico**: do átomo ao sistema. Cada bloco
 │    [Projeto Final] kernel_sim                               │
 │    O Magnum Opus → "Eu sou o arquiteto da máquina"          │
 └─────────────────────────────────────────────────────────────┘
-
+```
 
 ### Distribuição por Nível de Dificuldade
 
