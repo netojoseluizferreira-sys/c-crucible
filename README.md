@@ -5,9 +5,9 @@
 >
 > — Enkel, ourives do silício
 
-[![C Standard](https://img.shields.io/badge/standard-C99%2FC17-blue?logo=c)](https://en.wikipedia.org/wiki/C99)
-[![Build Status](https://img.shields.io/badge/build-Wall%20-Wextra%20-Werror-red?logo=gcc)](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
-[![Memory Safety](https://img.shields.io/badge/memory-Valgrind%20%7C%20Sanitizers-purple?logo=valgrind)](https://valgrind.org/)
+[![C Standard](https://img.shields.io/badge/standard-C99%2FC17-blue)](https://en.wikipedia.org/wiki/C99)
+[![Build](https://img.shields.io/badge/build-Wall_Wextra_Werror-red)](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
+[![Memory](https://img.shields.io/badge/memory-Valgrind%20%7C%20Sanitizers-purple)](https://valgrind.org/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 [![Progress](https://img.shields.io/badge/exerc%C3%ADcios-0%2F750-darkgrey)](./)
 
