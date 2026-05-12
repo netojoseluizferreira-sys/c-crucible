@@ -1,0 +1,30 @@
+# Binários
+*.out
+*.o
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Debug
+*.dSYM/
+
+# Arquivos temporários
+*.tmp
+*.swp
+*~
+\#*\#
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Valgrind
+vgcore.*
+
+# Sanitizers
+*.asan
