@@ -4,7 +4,7 @@
 
 | Data | Exercícios | Tema | Notas |
 |------|-----------|------|-------|
-| 12/05/2026 | 001-010 | Tipos e variáveis | Início da maratona |
+| 12/05/2026 | 001-020 | Tipos, variáveis e operadores | Primeira fornada completa. Bitwise ainda é abstrato. Swap sem auxiliar e MSB foram os mais difíceis. Compilou tudo limpo. |
 | | | | |
 | | | | |
 
@@ -13,6 +13,3 @@
 | Data | Exercícios | Tema | Notas |
 |------|-----------|------|-------|
 | | | | |
-
----
-Atualizado a cada sessão de forja.
