@@ -319,7 +319,7 @@ Se não aparecer isso, o exercício **não está terminado**.
 
 | Bloco | Exercícios | Projeto | Status |
 |:------|:----------|:--------|:-------|
-| 0 — Fundição | 20 / 170 | `memalloc` | 🔄 **Em Execução** 🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜ 12% |
+| 0 — Fundição | 35 / 170 | `memalloc` | 🔄 **Em Execução** 🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜ 21% |
 | 1 — Lineares | 200 | `textedit` | ⬛ Planejado |
 | 2 — Recursão | 50 | `solver` | ⬛ Planejado |
 | 3 — Árvores | 150 | `filesys` | ⬛ Planejado |
@@ -327,7 +327,7 @@ Se não aparecer isso, o exercício **não está terminado**.
 | 5 — Grafos | 100 | `metromap` | ⬛ Planejado |
 | 6 — Avançadas | 30 | `rangequery` | ⬛ Planejado |
 | **Final** | — | `kernel_sim` | ⬛ Planejado |
-| **TOTAL** | **20 / 750** | | 🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜ 3% |
+| **TOTAL** | **35 / 750** | | 🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜ 5% |
 ---
 
 ## 🧠 Por que C? Por que Agora?
