@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0] — 2026-05-18
+### Adicionado
+- 20 exercícios do sub-bloco 03 — Funções e Escopo (036 a 055)
+  - Passagem por valor e referência, procedimentos (void), recursão (fatorial, Fibonacci, MDC, soma de dígitos, potência, Hanói)
+  - Funções com ponteiros, escopo local vs global, funções variádicas (soma via array)
+  - Destaques: Torre de Hanói (recursão), Swap com XOR e proteção anti-tiro-no-pé, MDC recursivo
+
 ## [0.2.0] — 2026-05-13
 ### Adicionado
 - 15 exercícios do sub-bloco 02 — Controle de Fluxo (021 a 035)
