@@ -250,76 +250,75 @@ Tudo em C puro. Sem bibliotecas externas. Compilado com o Paredão. *Este projet
 
 ---
 
-## 🛡️ O Regime de Compilação — O Paredão
+# 🛡️ Dicionário das Flags de Compilação
 
-Nenhum código neste repositório é aceito sem passar pelo paredão. Cada flag é um portão que só se abre se o código for digno.
+## O Paredão Atual (Sub-Bloco 04 em diante)
 
-### Flags de Guerra — Linha de Comando
+Todo código neste repositório é compilado com as seguintes flags:
 
-```bash
+\`\`\`bash
 gcc -std=c99 -Wall -Wextra -Werror -pedantic \
     -Wshadow -Wconversion -Wsign-conversion \
-    -Wformat=2 \
+    -Wformat=2 -Warray-bounds -Wmissing-prototypes \
+    -Wnull-dereference -Wstrict-prototypes -Wold-style-definition \
+    -Wcast-qual -Wwrite-strings -Wstrict-aliasing=3 \
+    -fno-common \
     fonte.c -o binario
-```
+\`\`\`
 
-### Dicionário das Bandeiras
+## Evolução do Paredão
 
-| Flag | Significado | Por que é inegociável |
-|:-----|:------------|:----------------------|
-| `-std=c99` | Força o padrão ISO C99 | Garante portabilidade. Sem extensões GNU. |
-| `-Wall` | Habilita a maioria dos warnings | Primeira linha de defesa. É o mínimo. |
-| `-Wextra` | Warnings adicionais | Cobre o que `-Wall` deixou passar. |
-| `-Werror` | **Transforma warnings em erros** | Disciplina máxima. Se o compilador chiou, NÃO COMPILA. |
-| `-pedantic` | Rejeita código fora do padrão ISO | Código puro, sem depender de compilador específico. |
-| `-Wshadow` | Proíbe variáveis com mesmo nome em escopos aninhados | Evita o clássico "por que essa variável não mudou?". |
-| `-Wconversion` | Proíbe conversões implícitas entre tipos | Cada bit importa. `int` → `unsigned int`? Explícito ou nada. |
-| `-Wsign-conversion` | Conversões entre signed/unsigned | Complemento do anterior. Segurança de tipos. |
-| `-Wformat=2` | Verifica `printf`/`scanf` | `printf("%d", "abc")` não passa. |
+| Sub-Bloco | Flags Adicionadas |
+|:----------|:------------------|
+| 01 — Tipos, Variáveis e Operadores | `-std=c99 -Wall -Wextra -Werror -pedantic` |
+| 03 — Funções e Escopo | `-Wshadow -Wconversion -Wsign-conversion -Wformat=2 -Wmissing-prototypes` |
+| 04 — Arrays e Strings | `-Warray-bounds` |
+| 05 — Ponteiros | `-Wnull-dereference -Wstrict-prototypes -Wold-style-definition -Wcast-qual -Wwrite-strings -Wstrict-aliasing=3 -fno-common` |
+| 06 — Alocação Dinâmica | *(mantido)* |
 
-### Code Runner — VS Code
+## Glossário
 
-Configuração injetada no `settings.json`:
+| Flag | O que faz |
+|------|----------|
+| `-std=c99` | Força o padrão ISO C99. Sem extensões GNU. |
+| `-Wall` | Habilita a maioria dos warnings. |
+| `-Wextra` | Warnings adicionais. |
+| `-Werror` | Transforma warnings em erros. |
+| `-pedantic` | Rejeita código fora do padrão ISO. |
+| `-Wshadow` | Proíbe variáveis com mesmo nome em escopos aninhados. |
+| `-Wconversion` | Proíbe conversões implícitas entre tipos. |
+| `-Wsign-conversion` | Conversões entre signed/unsigned. |
+| `-Wformat=2` | Verifica `printf`/`scanf`. |
+| `-Warray-bounds` | Detecta acesso fora dos limites de arrays. |
+| `-Wmissing-prototypes` | Exige protótipos para todas as funções. |
+| `-Wnull-dereference` | Alerta sobre possível dereferência de ponteiro nulo. |
+| `-Wstrict-prototypes` | Exige protótipos completos (ex: `int f(void)`). |
+| `-Wold-style-definition` | Proíbe definições de funções no estilo K&R. |
+| `-Wcast-qual` | Alerta quando cast remove `const`. |
+| `-Wwrite-strings` | Força strings literais como `const char[]`. |
+| `-Wstrict-aliasing=3` | Regras rigorosas de aliasing. |
+| `-fno-common` | Evita múltiplas definições de variáveis globais. |
 
-```json
-"c": "gcc -std=c99 -Wall -Wextra -Werror -pedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 $fileName -o $fileNameWithoutExt && echo '=== Sem warnings ===' && $dir$fileNameWithoutExt"
-```
+## Sanitizers (Sob Demanda)
 
-Ao pressionar `Ctrl+Alt+N`, o Code Runner limpa a tela, salva o arquivo, compila com o paredão, e se tudo passar, exibe `=== Sem warnings ===` e executa.
+\`\`\`bash
+gcc -g -fsanitize=address,undefined fonte.c -o binario
+\`\`\`
 
-### Sanitizers — Os Sensores de Corrupção
+## Valgrind (Obrigatório a partir do Sub-Bloco 06)
 
-Quando a memória feder a podre, aciono os sanitizers:
+\`\`\`bash
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./binario
+\`\`\`
 
-```bash
-gcc -std=c99 -g -fsanitize=address,undefined fonte.c -o binario
-./binario
-```
-
-- **AddressSanitizer** (`-fsanitize=address`): detecta buffer overflow, uso após `free`, vazamentos.
-- **UndefinedBehaviorSanitizer** (`-fsanitize=undefined`): overflow com sinal, divisão por zero, shift excessivo.
-
-### Valgrind — O Juiz Final
-
-```bash
-valgrind --leak-check=full --show-leak-kinds=all ./binario
-```
-
-A última linha deve ser:
-
-```
-All heap blocks were freed -- no leaks are possible
-```
-
-Se não aparecer isso, o exercício **não está terminado**.
+Resultado obrigatório: `All heap blocks were freed -- no leaks are possible`
 
 ---
-
 ## 📊 Progresso Atual
 
 | Bloco | Exercícios | Projeto | Status |
 |:------|:----------|:--------|:-------|
-| 0 — Fundição | 55 / 170 | `memalloc` | 🔄 **Em Execução** 🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜ 32% |
+| 0 — Fundição | 75 / 170 | `memalloc` | 🔄 **Em Execução** 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ 44% |
 | 1 — Lineares | 200 | `textedit` | ⬛ Planejado |
 | 2 — Recursão | 50 | `solver` | ⬛ Planejado |
 | 3 — Árvores | 150 | `filesys` | ⬛ Planejado |
@@ -327,7 +326,7 @@ Se não aparecer isso, o exercício **não está terminado**.
 | 5 — Grafos | 100 | `metromap` | ⬛ Planejado |
 | 6 — Avançadas | 30 | `rangequery` | ⬛ Planejado |
 | **Final** | — | `kernel_sim` | ⬛ Planejado |
-| **TOTAL** | **55 / 750** | | 🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜ 7% |
+| **TOTAL** | **75 / 750** | | 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ 10% |
 ---
 
 ## 🧠 Por que C? Por que Agora?

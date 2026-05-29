@@ -1,29 +1,51 @@
 # 🛡️ Dicionário das Flags de Compilação
 
-## O Paredão
+## O Paredão Atual (Sub-Bloco 04 em diante)
 
 Todo código neste repositório é compilado com as seguintes flags:
 
 \`\`\`bash
 gcc -std=c99 -Wall -Wextra -Werror -pedantic \
     -Wshadow -Wconversion -Wsign-conversion \
-    -Wformat=2 \
+    -Wformat=2 -Warray-bounds -Wmissing-prototypes \
+    -Wnull-dereference -Wstrict-prototypes -Wold-style-definition \
+    -Wcast-qual -Wwrite-strings -Wstrict-aliasing=3 \
+    -fno-common \
     fonte.c -o binario
 \`\`\`
 
+## Evolução do Paredão
+
+| Sub-Bloco | Flags Adicionadas |
+|:----------|:------------------|
+| 01 — Tipos, Variáveis e Operadores | `-std=c99 -Wall -Wextra -Werror -pedantic` |
+| 03 — Funções e Escopo | `-Wshadow -Wconversion -Wsign-conversion -Wformat=2 -Wmissing-prototypes` |
+| 04 — Arrays e Strings | `-Warray-bounds` |
+| 05 — Ponteiros | `-Wnull-dereference -Wstrict-prototypes -Wold-style-definition -Wcast-qual -Wwrite-strings -Wstrict-aliasing=3 -fno-common` |
+| 06 — Alocação Dinâmica | *(mantido)* |
+
 ## Glossário
 
-| Flag | Tradução | O que faz |
-|------|----------|-----------|
-| `-std=c99` | Standard C99 | Força o padrão ISO C99. Sem extensões GNU. |
-| `-Wall` | Warnings All | Habilita a maioria dos warnings. |
-| `-Wextra` | Warnings Extra | Warnings adicionais que `-Wall` não cobre. |
-| `-Werror` | Warnings as Errors | **Transforma qualquer warning em erro de compilação.** |
-| `-pedantic` | Pedantic Mode | Rejeita código que não siga estritamente o padrão ISO. |
-| `-Wshadow` | Warning Shadow | Proíbe variável local com mesmo nome de global/parâmetro. |
-| `-Wconversion` | Warning Conversion | Proíbe conversões implícitas entre tipos diferentes. |
-| `-Wsign-conversion` | Warning Sign Conversion | Específico para conversões signed ↔ unsigned. |
-| `-Wformat=2` | Warning Format Level 2 | Verifica se argumentos do `printf`/`scanf` batem com a string de formato. |
+| Flag | O que faz |
+|------|----------|
+| `-std=c99` | Força o padrão ISO C99. Sem extensões GNU. |
+| `-Wall` | Habilita a maioria dos warnings. |
+| `-Wextra` | Warnings adicionais. |
+| `-Werror` | Transforma warnings em erros. |
+| `-pedantic` | Rejeita código fora do padrão ISO. |
+| `-Wshadow` | Proíbe variáveis com mesmo nome em escopos aninhados. |
+| `-Wconversion` | Proíbe conversões implícitas entre tipos. |
+| `-Wsign-conversion` | Conversões entre signed/unsigned. |
+| `-Wformat=2` | Verifica `printf`/`scanf`. |
+| `-Warray-bounds` | Detecta acesso fora dos limites de arrays. |
+| `-Wmissing-prototypes` | Exige protótipos para todas as funções. |
+| `-Wnull-dereference` | Alerta sobre possível dereferência de ponteiro nulo. |
+| `-Wstrict-prototypes` | Exige protótipos completos (ex: `int f(void)`). |
+| `-Wold-style-definition` | Proíbe definições de funções no estilo K&R. |
+| `-Wcast-qual` | Alerta quando cast remove `const`. |
+| `-Wwrite-strings` | Força strings literais como `const char[]`. |
+| `-Wstrict-aliasing=3` | Regras rigorosas de aliasing. |
+| `-fno-common` | Evita múltiplas definições de variáveis globais. |
 
 ## Sanitizers (Sob Demanda)
 
@@ -31,10 +53,7 @@ gcc -std=c99 -Wall -Wextra -Werror -pedantic \
 gcc -g -fsanitize=address,undefined fonte.c -o binario
 \`\`\`
 
-- **AddressSanitizer:** Detecta buffer overflow, uso após `free`, memory leaks.
-- **UndefinedBehaviorSanitizer:** Detecta overflow com sinal, divisão por zero, shift inválido.
-
-## Valgrind
+## Valgrind (Obrigatório a partir do Sub-Bloco 06)
 
 \`\`\`bash
 valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./binario
