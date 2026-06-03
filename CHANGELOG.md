@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.0] — 2026-06-02
+### Adicionado
+- 33 exercícios do sub-bloco 05 — Ponteiros (076 a 106, 109 e 110)
+  - Aritmética de ponteiros, void*, casts, ponteiros para ponteiros (até nível triplo)
+  - Ponteiros para funções, callbacks, tabelas de funções, qsort
+  - Arrays 2D acessados via ponteiro simples, alinhamento de structs, const com ponteiros
+  - Destaques: A Forja de Funções (callback), A Tumba dos Alinhamentos, A Aniquilação do Silício (filtro + transformação + ordenação via função)
+- Exercícios 107 (Dança Macabra – lista duplamente encadeada) e 108 (Portal do Caos – árvore de decisão) adiados para o Bloco 1 por envolverem estruturas ainda não consolidadas
+- Paredão expandido: -Wcast-qual, -Wwrite-strings, -Wstrict-aliasing=3, -fno-common
+
 ## [0.4.0] — 2026-05-29
 ### Adicionado
 - 20 exercícios do sub-bloco 04 — Arrays e Strings (056 a 075)
