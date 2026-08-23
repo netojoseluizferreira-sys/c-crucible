@@ -10,6 +10,7 @@
 | 29/05/2026 | 056-075 | Arrays e Strings | Arrays unidimensionais, multidimensionais, aritmética de ponteiros. Strings dominadas: strlen, strcpy, strcmp, strcat, strchr, strstr recriadas. Palíndromo com ponteiros, inversão in-place. Sub-bloco concluído com fluência. |
 | | | | *Pausa entre 18 e 29/05 por motivos acadêmicos (provas, projetos, simulados). Retomada com força total.* |
 | 01-02/06/2026 | 076-106, 109-110 | Ponteiros | A descida ao Inferno do Silício. Ponteiros simples, duplos, triplos, void*, casts, ponteiros para função, tabelas de callbacks, qsort. Arrays 2D acessados via ponteiro simples. Alinhamento de structs, const com ponteiros. Exercícios 107 (Dança Macabra – lista duplamente encadeada) e 108 (Portal do Caos – árvore de decisão) pulados por envolverem estruturas ainda não consolidadas — serão revisitados no Bloco 1 com a devida profundidade. O Paredão dos ponteiros (-Wcast-qual, -Wwrite-strings, -Wstrict-aliasing=3) foi domado. |
+| 23/08/2026 | 111-135 | Alocação Dinâmica | malloc, calloc, realloc, free, memcpy, memmove. Detecção e correção de vazamentos, double free, dangling pointers. Array de ponteiros para strings, matriz dinâmica, cópia profunda. Realloc com loop, realloc para trocar tipo, struct com array dinâmico. Array genérico com void* e memcpy. CRUD de arrays dinâmicos com 10 slots (exercício 135). Intervalo de 3 meses entre commits devido a perda de foco e procrastinação, combatidas constantemente até a retomada da rotina. |
 
 ## Bloco 1 — Estruturas Lineares (200)
 

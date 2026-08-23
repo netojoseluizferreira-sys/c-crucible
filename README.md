@@ -318,7 +318,7 @@ Resultado obrigatório: `All heap blocks were freed -- no leaks are possible`
 
 | Bloco | Exercícios | Projeto | Status |
 |:------|:----------|:--------|:-------|
-| 0 — Fundição | 108 / 170 | `memalloc` | 🔄 **Em Execução** 🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜ 64% |
+| 0 — Fundição | 133 / 170 | `memalloc` | 🔄 **Em Execução** 🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜ 78% |
 | 1 — Lineares | 200 | `textedit` | ⬛ Planejado |
 | 2 — Recursão | 50 | `solver` | ⬛ Planejado |
 | 3 — Árvores | 150 | `filesys` | ⬛ Planejado |
@@ -326,7 +326,7 @@ Resultado obrigatório: `All heap blocks were freed -- no leaks are possible`
 | 5 — Grafos | 100 | `metromap` | ⬛ Planejado |
 | 6 — Avançadas | 30 | `rangequery` | ⬛ Planejado |
 | **Final** | — | `kernel_sim` | ⬛ Planejado |
-| **TOTAL** | **108 / 750** | | 🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜ 14% |
+| **TOTAL** | **133 / 750** | | 🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜ 18% |
 ---
 
 ## 🧠 Por que C? Por que Agora?

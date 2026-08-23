@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.0] — 2026-08-23
+### Adicionado
+- 25 exercícios do sub-bloco 06 — Alocação Dinâmica (111 a 135)
+  - malloc, calloc, realloc, free, memcpy, memmove
+  - Detecção e correção de vazamentos, double free, dangling pointers
+  - Array de ponteiros para strings, matriz dinâmica, cópia profunda
+  - Realloc com loop, realloc para trocar tipo, struct com array dinâmico
+  - Array genérico com void* e memcpy
+  - CRUD de arrays dinâmicos com 10 slots (exercício 135)
+- Intervalo de 3 meses entre commits devido a perda de foco e procrastinação,
+  combatidas constantemente até a retomada da rotina.
+
 ## [0.5.0] — 2026-06-02
 ### Adicionado
 - 33 exercícios do sub-bloco 05 — Ponteiros (076 a 106, 109 e 110)
