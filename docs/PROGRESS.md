@@ -1,6 +1,11 @@
-# 📊 Registro de Progresso
+# 📊 Registro de Progresso — The C Crucible (775 exercícios)
 
-## Bloco 0 — Fundição do Ferro (170)
+> **Progresso geral:** 148 / 775 (19,1%)  
+> **Bloco atual:** Bloco 0 — Fundição do Ferro (em andamento)
+
+---
+
+## Bloco 0 — Fundição do Ferro (170 exercícios)
 
 | Data | Exercícios | Tema | Notas |
 |------|-----------|------|-------|
@@ -11,9 +16,60 @@
 | | | | *Pausa entre 18 e 29/05 por motivos acadêmicos (provas, projetos, simulados). Retomada com força total.* |
 | 01-02/06/2026 | 076-106, 109-110 | Ponteiros | A descida ao Inferno do Silício. Ponteiros simples, duplos, triplos, void*, casts, ponteiros para função, tabelas de callbacks, qsort. Arrays 2D acessados via ponteiro simples. Alinhamento de structs, const com ponteiros. Exercícios 107 (Dança Macabra – lista duplamente encadeada) e 108 (Portal do Caos – árvore de decisão) pulados por envolverem estruturas ainda não consolidadas — serão revisitados no Bloco 1 com a devida profundidade. O Paredão dos ponteiros (-Wcast-qual, -Wwrite-strings, -Wstrict-aliasing=3) foi domado. |
 | 23/08/2026 | 111-135 | Alocação Dinâmica | malloc, calloc, realloc, free, memcpy, memmove. Detecção e correção de vazamentos, double free, dangling pointers. Array de ponteiros para strings, matriz dinâmica, cópia profunda. Realloc com loop, realloc para trocar tipo, struct com array dinâmico. Array genérico com void* e memcpy. CRUD de arrays dinâmicos com 10 slots (exercício 135). Intervalo de 3 meses entre commits devido a perda de foco e procrastinação, combatidas constantemente até a retomada da rotina. |
+| 26-27/08/2026 | 136-150 | Arquivos e I/O | Gravador de texto, leitor, copiador, contador de linhas. Escrita e leitura binária. Tamanho de arquivo com fseek/ftell. Atualização seletiva. Bufferização personalizada. CSV manual. Comparador. Inversor binário. Extrator de trecho. Concatenador. Log com append. Frequência de caracteres. Correção de warnings -Wsign-conversion e -Wconversion. Reflexão: conceitos de bufferização e append são universais, mas sintaxe específica de C é ruído para quem não seguirá em C. Sub-bloco concluído. |
 
-## Bloco 1 — Estruturas Lineares (200)
+---
+
+## Bloco 1 — Estruturas Lineares e Memória Dinâmica (130 exercícios)
 
 | Data | Exercícios | Tema | Notas |
 |------|-----------|------|-------|
 | | | | |
+
+---
+
+## Bloco 2 — Raciocínio Algorítmico, Recursão e Ordenação (80 exercícios)
+
+| Data | Exercícios | Tema | Notas |
+|------|-----------|------|-------|
+| | | | |
+
+---
+
+## Bloco 3 — Árvores e Hierarquias (120 exercícios)
+
+| Data | Exercícios | Tema | Notas |
+|------|-----------|------|-------|
+| | | | |
+
+---
+
+## Bloco 4 — Tabelas Hash, Conjuntos e Mapas (65 exercícios)
+
+| Data | Exercícios | Tema | Notas |
+|------|-----------|------|-------|
+| | | | |
+
+---
+
+## Bloco 5 — Grafos e Algoritmos em Grafos (100 exercícios)
+
+| Data | Exercícios | Tema | Notas |
+|------|-----------|------|-------|
+| | | | |
+
+---
+
+## Bloco 6 — Alocadores, Layout de Memória e Engenharia de Sistemas (115 exercícios)
+
+| Data | Exercícios | Tema | Notas |
+|------|-----------|------|-------|
+| | | | |
+
+---
+
+## Projeto Final — `kernel_sim` (opcional, mas glorioso)
+
+| Data | Atividade | Status |
+|------|-----------|--------|
+| | | |

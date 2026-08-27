@@ -5,6 +5,9 @@
 *.dll
 *.so
 *.dylib
+*.txt
+*.bin
+*.csv
 
 # Debug
 *.dSYM/

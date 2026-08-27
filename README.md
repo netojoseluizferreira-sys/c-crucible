@@ -1,14 +1,10 @@
 # ⚙️ The C Crucible — Da Fundição ao Kernel
 
-> *"Python me mostrou o que é possível. C me mostrou o que é real."*
->
-> — Enkel, ourives do silício
-
 [![C Standard](https://img.shields.io/badge/standard-C99%2FC17-blue)](https://en.wikipedia.org/wiki/C99)
 [![Build](https://img.shields.io/badge/build-Wall_Wextra_Werror-red)](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
 [![Memory](https://img.shields.io/badge/memory-Valgrind%20%7C%20Sanitizers-purple)](https://valgrind.org/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
-[![Progress](https://img.shields.io/badge/exerc%C3%ADcios-0%2F750-darkgrey)](./)
+[![Progress](https://img.shields.io/badge/exerc%C3%ADcios-133%2F775-darkgrey)](./)
 
 ---
 
@@ -28,7 +24,7 @@
 
 ---
 
-## 🗺️ O Plano Diretor — 750 Exercícios em 16 Semanas
+## 🗺️ O Plano Diretor — 775 Exercícios em 16 Semanas
 
 A jornada simula um aprendizado **geológico**: do átomo ao sistema. Cada bloco é uma camada de rocha que só se forma depois que a anterior está sólida.
 
@@ -42,38 +38,38 @@ A jornada simula um aprendizado **geológico**: do átomo ao sistema. Cada bloco
                         │
                         ▼
 ┌─────────────────────────────────────────────────────────────┐
-│    [Bloco 1] Estruturas Lineares (200)                      │
-│    Listas, pilhas, filas → "Eu moldo o fluxo de dados"      │
+│    [Bloco 1] Estruturas Lineares e Memória Dinâmica (130)   │
+│    Listas, pilhas, filas, ownership → "Eu moldo o fluxo"    │
 └───────────────────────┬─────────────────────────────────────┘
                         │
                         ▼
 ┌─────────────────────────────────────────────────────────────┐
-│    [Bloco 2] Recursão & Complexidade (50)                   │
-│    Backtracking, Big-O → "Eu penso antes de executar"       │
+│    [Bloco 2] Raciocínio Algorítmico, Recursão, Ordenação (80)│
+│    Backtracking, Big-O, ordenação → "Eu penso antes"        │
 └───────────────────────┬─────────────────────────────────────┘
                         │
                         ▼
 ┌─────────────────────────────────────────────────────────────┐
-│    [Bloco 3] Árvores & Hierarquias (150)                    │
-│    BST, AVL, Heap → "Eu domino a hierarquia"                │
+│    [Bloco 3] Árvores e Hierarquias (120)                    │
+│    BST, AVL, Heap, Trie → "Eu domino a hierarquia"          │
 └───────────────────────┬─────────────────────────────────────┘
                         │
                         ▼
 ┌─────────────────────────────────────────────────────────────┐
-│    [Bloco 4] Hashing (50)                                   │
-│    Tabelas hash, colisões → "Eu transformo chaves em ouro"  │
+│    [Bloco 4] Tabelas Hash, Conjuntos e Mapas (65)           │
+│    Hash, colisões, rehash → "Eu transformo chaves em ouro"  │
 └───────────────────────┬─────────────────────────────────────┘
                         │
                         ▼
 ┌─────────────────────────────────────────────────────────────┐
-│    [Bloco 5] Grafos (100)                                   │
-│    BFS, Dijkstra, Kruskal → "Eu conecto o mundo"            │
+│    [Bloco 5] Grafos e Algoritmos em Grafos (100)            │
+│    BFS, DFS, Dijkstra, MST → "Eu conecto o mundo"           │
 └───────────────────────┬─────────────────────────────────────┘
                         │
                         ▼
 ┌─────────────────────────────────────────────────────────────┐
-│    [Bloco 6] Estruturas Avançadas (30)                      │
-│    Segment Tree, Union-Find → "Eu enfrento o competitivo"   │
+│    [Bloco 6] Alocadores, Layout e Engenharia (115)          │
+│    Arenas, pools, profiling → "Eu sou o engenheiro"         │
 └───────────────────────┬─────────────────────────────────────┘
                         │
                         ▼
@@ -87,12 +83,12 @@ A jornada simula um aprendizado **geológico**: do átomo ao sistema. Cada bloco
 
 | Nível | Quantidade | Percentual | Objetivo |
 |:------|:----------|:-----------|:---------|
-| 🟢 **Fixação** | 150 | 20% | Memória muscular. Repetição sagrada. |
-| 🔵 **Fácil** | 150 | 20% | Aplicação direta de conceitos. |
-| 🟡 **Médio** | 187 | 25% | Combina dois ou mais conceitos. |
-| 🟠 **Difícil** | 187 | 25% | Exige insight, modelos não óbvios. |
-| 🔴 **Desafio** | 76 | 10% | Nível olimpíada. Prova de teoremas ou sistemas complexos. |
-| **Total** | **750** | **100%** | |
+| 🟢 **Fixação** | 155 | 20% | Memória muscular. Repetição sagrada. |
+| 🔵 **Fácil** | 155 | 20% | Aplicação direta de conceitos. |
+| 🟡 **Médio** | 194 | 25% | Combina dois ou mais conceitos. |
+| 🟠 **Difícil** | 194 | 25% | Exige insight, modelos não óbvios. |
+| 🔴 **Desafio** | 77 | 10% | Nível olimpíada. Prova de teoremas ou sistemas complexos. |
+| **Total** | **775** | **100%** | |
 
 ---
 
@@ -122,21 +118,21 @@ Cada bloco contém exercícios e um **projeto integrador** que consolida o apren
 
 ---
 
-### 🔗 BLOCO 1 — Estruturas Lineares (200)
+### 🔗 BLOCO 1 — Estruturas Lineares e Memória Dinâmica (130)
 
-> *"Dados fluem. Quem controla a estrutura, controla o sistema."*
+> *"Dados fluem. Quem controla a estrutura e a memória, controla o sistema."*
 
 | Estrutura | Qtd | Foco |
 |:----------|:---|:-----|
-| Arrays dinâmicos (vector) | 15 | Redimensionamento, inserção/remoção no meio, capacidade vs tamanho. |
-| Lista Encadeada Simples | 30 | Inserção, remoção, busca, inversão iterativa/recursiva, detecção de ciclos (Floyd), merge de listas, merge sort. |
-| Lista Duplamente Encadeada | 20 | Inserção/remoção, inversão, cursor, conversão para árvore binária. |
-| Lista Circular | 10 | Inserção, remoção, problema de Josephus, ordenação circular. |
-| Pilha (Stack) | 20 | Implementações com array e lista, avaliador de expressões posfixa/infixa, balanceamento de parênteses/HTML, undo/redo genérico. |
-| Fila (Queue) | 20 | Fila com array circular, fila com lista, BFS básico (preparação para grafos), fila de prioridade simples. |
-| Fila Circular | 10 | Buffer circular, ring buffer para streaming. |
+| Arrays dinâmicos (vector) | 15 | Redimensionamento, inserção/remoção no meio, capacidade vs tamanho, estratégias de crescimento, `realloc` seguro. |
+| Lista Encadeada Simples | 30 | Inserção, remoção, busca, inversão iterativa/recursiva, detecção de ciclos (Floyd), merge de listas, merge sort, ownership de nós. |
+| Lista Duplamente Encadeada | 20 | Inserção/remoção, inversão, cursor, conversão para árvore binária, remoção sem ponteiro anterior. |
+| Lista Circular | 10 | Inserção, remoção, problema de Josephus, ordenação circular, destruição segura. |
+| Pilha (Stack) | 20 | Implementações com array e lista, avaliador de expressões posfixa/infixa, balanceamento, undo/redo, chamadas de função simuladas. |
+| Fila (Queue) | 20 | Fila com array circular, fila com lista, BFS básico, fila de prioridade simples, análise de desperdício. |
 | Deque | 10 | Duas implementações (lista dupla e array circular), sliding window máximo. |
-| Exercícios Integradores | 65 | Misturas de pilha+fila, simulação de cache LRU, preparação para hashing. |
+| Integração e debugging de memória | 15 | Misturas de pilha+fila, simulação de cache LRU, análise de vazamentos, double free, dangling pointers, heap corruption. |
+| Reforço e extensões | 10 | Estruturas lineares aplicadas, combinação de múltiplas estruturas, listas com nós sentinelas, otimização. |
 
 > **🏗️ Projeto: `textedit` — Editor de Texto em Terminal**
 >
@@ -144,54 +140,56 @@ Cada bloco contém exercícios e um **projeto integrador** que consolida o apren
 
 ---
 
-### 🔁 BLOCO 2 — Recursão & Complexidade (50)
+### 🔁 BLOCO 2 — Raciocínio Algorítmico, Recursão e Ordenação (80)
 
 > *"Pensar antes de agir. Medir antes de otimizar."*
 
 | Tema | Qtd |
 |:-----|:---|
-| Recursão básica (fatorial, Fibonacci) | 5 |
-| Recursão em arrays e strings | 10 |
-| Backtracking (N-rainhas, labirinto, sudoku) | 15 |
-| Análise de complexidade (Big-O, Ω, Θ) | 20 |
+| Recursão básica e stack | 10 |
+| Recursão em strings e arrays | 15 |
+| Backtracking (N-rainhas, labirinto, sudoku) | 20 |
+| Algoritmos de ordenação (Bubble, Merge, Quick, etc.) | 20 |
+| Análise de complexidade integrada (Big-O, Ω, Θ) | 15 |
 
-> **🏗️ Projeto: `solver` — Resolvedor de Labirintos**
+> **🏗️ Projeto: `solver` — Resolvedor de Labirintos e Sudoku**
 >
-> Lê labirinto de arquivo, resolve com DFS recursivo, exibe caminho. Implementa também força bruta para Sudoku. Relatório de complexidade para cada algoritmo.
+> Lê labirinto de arquivo, resolve com DFS recursivo, exibe caminho. Implementa também força bruta para Sudoku. Relatório de complexidade e análise de memória da stack.
 
 ---
 
-### 🌳 BLOCO 3 — Árvores & Hierarquias (150)
+### 🌳 BLOCO 3 — Árvores e Hierarquias (120)
 
 > *"Tudo é hierarquia. Quem entende a árvore, entende o sistema."*
 
 | Estrutura | Qtd | Foco |
 |:----------|:---|:-----|
-| Árvore Binária | 20 | Travessias (pré, em, pós), altura, contagem, espelhamento, simetria, reconstrução. |
+| Árvore Binária | 20 | Travessias, altura, contagem, espelhamento, simetria, reconstrução. |
 | BST | 25 | Inserção, remoção, busca, predecessor/sucessor, k-ésimo, validação. |
 | AVL | 20 | Rotações simples/duplas, inserção e remoção com balanceamento, testes de estresse. |
-| Red-Black Tree | 15 | Inserção, remoção, propriedades, comparação empírica com AVL. |
-| Heap (min/max) | 25 | Heapify, heapsort, fila de prioridade, heap de medianas, k-th largest. |
+| Red-Black Tree | 10 | Inserção, remoção, propriedades, comparação empírica com AVL. |
+| Heap (min/max) | 20 | Heapify, heapsort, fila de prioridade, heap de medianas, k-th largest. |
 | Trie | 15 | Inserção, busca, autocomplete, contagem de prefixos, compressão. |
-| Exercícios Cruzados | 30 | Converter lista → árvore, árvore → array, heap em árvore, etc. |
+| Integração e conversões | 10 | Converter lista → BST, heap em array, árvore para lista dupla. |
 
 > **🏗️ Projeto: `filesys` — Sistema de Arquivos em Memória**
 >
-> Simula um sistema de arquivos hierárquico com inodes, diretórios, caminhos, permissões. Comandos: `mkdir`, `touch`, `ls`, `cd`, `rm -r`. Tudo manipulado com árvores. *O teu próprio "mini kernel" de armazenamento.*
+> Simula um sistema de arquivos hierárquico com diretórios, arquivos, caminhos e permissões. Comandos: `mkdir`, `touch`, `ls`, `cd`, `rm -r`. Usa árvore n-ária. *O teu próprio "mini kernel" de armazenamento.*
 
 ---
 
-### 🧪 BLOCO 4 — Hashing (50)
+### 🧪 BLOCO 4 — Tabelas Hash, Conjuntos e Mapas (65)
 
 > *"A função hash é o coração; a resolução de colisões é a alma."*
 
 | Tema | Qtd |
 |:-----|:---|
-| Funções hash (djb2, sdbm, murmur) | 5 |
+| Funções hash (djb2, sdbm, murmur, FNV) | 8 |
 | Encadeamento separado | 15 |
 | Endereçamento aberto (linear, quadrático, duplo hash) | 15 |
-| Hash dinâmica (rehash, fator de carga) | 5 |
-| Aplicações (cache LRU, conjunto, mapa) | 10 |
+| Hash dinâmica (rehash, fator de carga) | 10 |
+| Aplicações (cache LRU, conjunto, mapa) | 12 |
+| Extensões e otimizações | 5 |
 
 > **🏗️ Projeto: `dict` — Dicionário e Corretor Ortográfico**
 >
@@ -199,19 +197,19 @@ Cada bloco contém exercícios e um **projeto integrador** que consolida o apren
 
 ---
 
-### 🕸️ BLOCO 5 — Grafos (100)
+### 🕸️ BLOCO 5 — Grafos e Algoritmos em Grafos (100)
 
 > *"O mundo é um grafo. Agora eu posso navegá-lo."*
 
 | Algoritmo | Qtd | Foco |
 |:----------|:---|:-----|
-| Representação (matriz, lista adj.) | 10 | Conversão entre formatos. |
-| BFS | 15 | Menor caminho em arestas não ponderadas, componentes conexas. |
-| DFS | 15 | Detecção de ciclos, ordenação topológica, componentes fortemente conexas (Kosaraju/Tarjan). |
+| Representação (matriz, lista adj.) | 15 | Conversão entre formatos, densos vs esparsos. |
+| BFS | 20 | Menor caminho em arestas não ponderadas, componentes conexas, bipartição. |
+| DFS | 20 | Detecção de ciclos, ordenação topológica, componentes fortemente conexas. |
 | Dijkstra | 20 | Com e sem heap, caminho mínimo, restauração de caminho. |
-| Kruskal & Prim | 15 | Árvore geradora mínima, Union-Find como auxiliar. |
-| Algoritmos extras | 10 | Bellman-Ford, Floyd-Warshall, grafos com pesos negativos. |
-| Problemas integrados | 15 | Rede de colaboração, mapa de voos, labirinto. |
+| Árvore geradora mínima (Kruskal/Prim) | 15 | MST, Union-Find como auxiliar. |
+| Algoritmos extras | 5 | Bellman-Ford, Floyd-Warshall, pesos negativos. |
+| Problemas integrados | 10 | Rede de colaboração, mapa de voos, labirinto. |
 
 > **🏗️ Projeto: `metromap` — Planejador de Rotas de Metrô**
 >
@@ -219,34 +217,28 @@ Cada bloco contém exercícios e um **projeto integrador** que consolida o apren
 
 ---
 
-### ⚡ BLOCO 6 — Estruturas Avançadas & Competitivas (30)
+### ⚡ BLOCO 6 — Alocadores, Layout de Memória e Engenharia de Sistemas (115)
 
-> *"Para problemas que exigem o melhor de ti."*
+> *"O verdadeiro engenheiro não apenas usa a memória — ele a projeta."*
 
-| Estrutura | Qtd |
-|:----------|:---|
-| Union-Find (Disjoint Set) | 10 |
-| Segment Tree | 10 |
-| Fenwick Tree (BIT) | 10 |
+| Tema | Qtd |
+|:-----|:---|
+| Layout de memória e representação | 15 |
+| Alocadores customizados (pools, arenas, freelists) | 25 |
+| Debugging avançado de memória | 10 |
+| Modularização e APIs | 10 |
+| Performance e otimização | 15 |
+| **Projeto Final Integrador** (`c_forge`) | 40 |
 
-> **🏗️ Projeto: `rangequery` — Motor de Consultas em Intervalos**
+> **🏗️ Projeto Final do Bloco: `c_forge` — Sistema de Gerenciamento de Dados com Cache e Alocadores**
 >
-> Carrega array massivo e responde queries de soma/máximo/mínimo em intervalo, com atualizações pontuais e lazy propagation. Compara Segment Tree vs Fenwick vs Força Bruta.
+> Um sistema completo (mini banco de dados chave-valor ou servidor de cache) que integra alocadores customizados, estruturas de dados otimizadas, APIs bem projetadas e análise de performance. É a prova final de que dominas a memória e a engenharia de software em C.
 
 ---
 
-### 👑 PROJETO FINAL: `kernel_sim` — Simulador de Kernel Minimalista
+### 👑 PROJETO FINAL: `kernel_sim` — Simulador de Kernel Minimalista (opcional, mas glorioso)
 
-> *"A coroação. O Magnum Opus."*
-
-Componentes:
-- **Gerenciador de processos:** lista circular com estados (pronto, executando, bloqueado)
-- **Escalonador:** heap de prioridades com aging
-- **Sistema de arquivos virtual:** árvore n-ária com inodes
-- **Tabela de páginas:** hash table simulando TLB
-- **Grafo de dependências:** módulos que comunicam entre si
-
-Tudo em C puro. Sem bibliotecas externas. Compilado com o Paredão. *Este projeto resume 4 anos de Ciência da Computação em um único binário.*
+> [!warning] Simulador minimalista de kernel em C puro: gerenciador de processos (lista circular), escalonador (heap), sistema de arquivos virtual (árvore), tabela de páginas (hash), grafo de dependências. O teu _Magnum Opus_. Coloca no GitHub e faz os recrutadores chorarem.
 
 ---
 
@@ -256,7 +248,7 @@ Tudo em C puro. Sem bibliotecas externas. Compilado com o Paredão. *Este projet
 
 Todo código neste repositório é compilado com as seguintes flags:
 
-\`\`\`bash
+```bash
 gcc -std=c99 -Wall -Wextra -Werror -pedantic \
     -Wshadow -Wconversion -Wsign-conversion \
     -Wformat=2 -Warray-bounds -Wmissing-prototypes \
@@ -264,7 +256,7 @@ gcc -std=c99 -Wall -Wextra -Werror -pedantic \
     -Wcast-qual -Wwrite-strings -Wstrict-aliasing=3 \
     -fno-common \
     fonte.c -o binario
-\`\`\`
+```
 
 ## Evolução do Paredão
 
@@ -301,15 +293,15 @@ gcc -std=c99 -Wall -Wextra -Werror -pedantic \
 
 ## Sanitizers (Sob Demanda)
 
-\`\`\`bash
+```bash
 gcc -g -fsanitize=address,undefined fonte.c -o binario
-\`\`\`
+```
 
 ## Valgrind (Obrigatório a partir do Sub-Bloco 06)
 
-\`\`\`bash
+```bash
 valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./binario
-\`\`\`
+```
 
 Resultado obrigatório: `All heap blocks were freed -- no leaks are possible`
 
@@ -318,15 +310,15 @@ Resultado obrigatório: `All heap blocks were freed -- no leaks are possible`
 
 | Bloco | Exercícios | Projeto | Status |
 |:------|:----------|:--------|:-------|
-| 0 — Fundição | 133 / 170 | `memalloc` | 🔄 **Em Execução** 🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜ 78% |
-| 1 — Lineares | 200 | `textedit` | ⬛ Planejado |
-| 2 — Recursão | 50 | `solver` | ⬛ Planejado |
-| 3 — Árvores | 150 | `filesys` | ⬛ Planejado |
-| 4 — Hashing | 50 | `dict` | ⬛ Planejado |
-| 5 — Grafos | 100 | `metromap` | ⬛ Planejado |
-| 6 — Avançadas | 30 | `rangequery` | ⬛ Planejado |
+| 0 — Fundição | 148 / 170 | `memalloc` | 🔄 **Em Andamento** 🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜ 87% |
+| 1 — Lineares e Memória | 0 / 130 | `textedit` | ⬛ Planejado |
+| 2 — Raciocínio Algorítmico | 0 / 80 | `solver` | ⬛ Planejado |
+| 3 — Árvores | 0 / 120 | `filesys` | ⬛ Planejado |
+| 4 — Hash | 0 / 65 | `dict` | ⬛ Planejado |
+| 5 — Grafos | 0 / 100 | `metromap` | ⬛ Planejado |
+| 6 — Alocadores e Engenharia | 0 / 115 | `c_forge` | ⬛ Planejado |
 | **Final** | — | `kernel_sim` | ⬛ Planejado |
-| **TOTAL** | **133 / 750** | | 🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜ 18% |
+| **TOTAL** | **148 / 775** | | 🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜ 19% |
 ---
 
 ## 🧠 Por que C? Por que Agora?
@@ -339,7 +331,7 @@ Programar em C sem abstrações:
 - **Conecta software e hardware:** o C é o dialeto comum entre o kernel e o ferro.
 - **Constrói disciplina permanente:** os hábitos adquiridos com `-Wall -Wextra -Werror` se refletem em qualquer outra linguagem.
 
-Após 750 exercícios neste regime, abrir o código-fonte do CPython, do Linux ou de qualquer banco de dados não será um choque — será como entrar em casa.
+Após 775 exercícios neste regime, abrir o código-fonte do CPython, do Linux ou de qualquer banco de dados não será um choque — será como entrar em casa.
 
 ---
 
@@ -375,4 +367,3 @@ Após 750 exercícios neste regime, abrir o código-fonte do CPython, do Linux o
 
 **Forjado por Enkel (Neto) © 2026**
 *"Do átomo ao kernel. Sem atalhos. Sem warnings. Sem desculpas."*
-```

@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.0] — 2026-08-27
+### Adicionado
+- 15 exercícios do sub-bloco 07 — Arquivos e I/O (136 a 150)
+  - Gravador de texto, leitor, copiador, contador de linhas
+  - Escrita e leitura binária, tamanho de arquivo com fseek/ftell
+  - Atualização seletiva, bufferização personalizada, CSV manual
+  - Comparador, inversor binário, extrator de trecho, concatenador, log, frequência
+  - Destaques: Inversor de arquivo binário com malloc e dois ponteiros, bufferização com setvbuf
+- Reflexão: conceitos de arquivos (bufferização, append, acesso aleatório) são universais,
+  mas sintaxe específica de C é ruído para quem não seguirá em C
+- **Reformulação do projeto**: Blocos 1 a 6 reestruturados (750 → 775 exercícios)
+
 ## [0.6.0] — 2026-08-23
 ### Adicionado
 - 25 exercícios do sub-bloco 06 — Alocação Dinâmica (111 a 135)
