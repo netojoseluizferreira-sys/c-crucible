@@ -4,7 +4,7 @@
 [![Build](https://img.shields.io/badge/build-Wall_Wextra_Werror-red)](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
 [![Memory](https://img.shields.io/badge/memory-Valgrind%20%7C%20Sanitizers-purple)](https://valgrind.org/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
-[![Progress](https://img.shields.io/badge/exerc%C3%ADcios-133%2F775-darkgrey)](./)
+[![Progress](https://img.shields.io/badge/exerc%C3%ADcios-150%2F755-darkgrey)](./)
 
 ---
 
@@ -24,7 +24,7 @@
 
 ---
 
-## 🗺️ O Plano Diretor — 775 Exercícios em 16 Semanas
+## 🗺️ O Plano Diretor — 755 Exercícios em 16 Semanas
 
 A jornada simula um aprendizado **geológico**: do átomo ao sistema. Cada bloco é uma camada de rocha que só se forma depois que a anterior está sólida.
 
@@ -32,7 +32,7 @@ A jornada simula um aprendizado **geológico**: do átomo ao sistema. Cada bloco
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│    [Bloco 0] Fundição do Ferro (170)                        │
+│    [Bloco 0] Fundição do Ferro (150)                        │
 │    Tipos, ponteiros, memória → "Eu controlo cada byte"      │
 └───────────────────────┬─────────────────────────────────────┘
                         │
@@ -83,12 +83,12 @@ A jornada simula um aprendizado **geológico**: do átomo ao sistema. Cada bloco
 
 | Nível | Quantidade | Percentual | Objetivo |
 |:------|:----------|:-----------|:---------|
-| 🟢 **Fixação** | 155 | 20% | Memória muscular. Repetição sagrada. |
-| 🔵 **Fácil** | 155 | 20% | Aplicação direta de conceitos. |
-| 🟡 **Médio** | 194 | 25% | Combina dois ou mais conceitos. |
-| 🟠 **Difícil** | 194 | 25% | Exige insight, modelos não óbvios. |
-| 🔴 **Desafio** | 77 | 10% | Nível olimpíada. Prova de teoremas ou sistemas complexos. |
-| **Total** | **775** | **100%** | |
+| 🟢 **Fixação** | 151 | 20% | Memória muscular. Repetição sagrada. |
+| 🔵 **Fácil** | 151 | 20% | Aplicação direta de conceitos. |
+| 🟡 **Médio** | 189 | 25% | Combina dois ou mais conceitos. |
+| 🟠 **Difícil** | 189 | 25% | Exige insight, modelos não óbvios. |
+| 🔴 **Desafio** | 75 | 10% | Nível olimpíada. Prova de teoremas ou sistemas complexos. |
+| **Total** | **755** | **100%** | |
 
 ---
 
@@ -96,7 +96,7 @@ A jornada simula um aprendizado **geológico**: do átomo ao sistema. Cada bloco
 
 Cada bloco contém exercícios e um **projeto integrador** que consolida o aprendizado em um sistema real.
 
-### 🪨 BLOCO 0 — Fundição do Ferro (170)
+### 🪨 BLOCO 0 — Fundição do Ferro (150) ✅ CONCLUÍDO
 
 > *"Se você não entende ponteiros, você não entende C."*
 
@@ -109,8 +109,6 @@ Cada bloco contém exercícios e um **projeto integrador** que consolida o apren
 | Ponteiros (o diabo) | 35 | `void*`, ponteiros para função, `char **argv`, alinhamento, casts, diferença array vs ponteiro. |
 | Alocação dinâmica | 25 | `malloc`/`free`/`realloc`, `memcpy`, `memmove`, double-free, dangling pointers, vazamentos. |
 | Arquivos e I/O | 15 | `fopen`, `fread`, `fwrite`, `fseek`, streams binários vs texto, bufferização. |
-| Pré-processador | 10 | Macros, `#ifdef`, include guards, compilação condicional, token pasting. |
-| Depuração | 10 | GDB, breakpoints, watchpoints, análise de core dumps. |
 
 > **🏗️ Projeto: `memalloc` — Alocador de Memória Customizado**
 >
@@ -244,7 +242,7 @@ Cada bloco contém exercícios e um **projeto integrador** que consolida o apren
 
 # 🛡️ Dicionário das Flags de Compilação
 
-## O Paredão Atual (Sub-Bloco 04 em diante)
+## O Paredão Atual
 
 Todo código neste repositório é compilado com as seguintes flags:
 
@@ -310,15 +308,15 @@ Resultado obrigatório: `All heap blocks were freed -- no leaks are possible`
 
 | Bloco | Exercícios | Projeto | Status |
 |:------|:----------|:--------|:-------|
-| 0 — Fundição | 148 / 170 | `memalloc` | 🔄 **Em Andamento** 🟩🟩🟩🟩🟩🟩🟩🟩🟩⬜ 87% |
-| 1 — Lineares e Memória | 0 / 130 | `textedit` | ⬛ Planejado |
+| 0 — Fundição | 150 / 150 | `memalloc` | ✅ **Concluído** 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100% |
+| 1 — Lineares e Memória | 15 / 130 | `textedit` | 🔄 **Em Andamento** 🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜ 12% |
 | 2 — Raciocínio Algorítmico | 0 / 80 | `solver` | ⬛ Planejado |
 | 3 — Árvores | 0 / 120 | `filesys` | ⬛ Planejado |
 | 4 — Hash | 0 / 65 | `dict` | ⬛ Planejado |
 | 5 — Grafos | 0 / 100 | `metromap` | ⬛ Planejado |
 | 6 — Alocadores e Engenharia | 0 / 115 | `c_forge` | ⬛ Planejado |
 | **Final** | — | `kernel_sim` | ⬛ Planejado |
-| **TOTAL** | **148 / 775** | | 🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜ 19% |
+| **TOTAL** | **165 / 755** | | 🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜ 22% |
 ---
 
 ## 🧠 Por que C? Por que Agora?
@@ -331,7 +329,7 @@ Programar em C sem abstrações:
 - **Conecta software e hardware:** o C é o dialeto comum entre o kernel e o ferro.
 - **Constrói disciplina permanente:** os hábitos adquiridos com `-Wall -Wextra -Werror` se refletem em qualquer outra linguagem.
 
-Após 775 exercícios neste regime, abrir o código-fonte do CPython, do Linux ou de qualquer banco de dados não será um choque — será como entrar em casa.
+Após 755 exercícios neste regime, abrir o código-fonte do CPython, do Linux ou de qualquer banco de dados não será um choque — será como entrar em casa.
 
 ---
 

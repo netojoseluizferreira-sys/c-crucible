@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.8.0] — 2026-09-10
+### Adicionado
+- 15 exercícios do sub-bloco 01 — Arrays Dinâmicos (151 a 165)
+  - Vector com redimensionamento, reserva antecipada, custo amortizado
+  - Inserção ordenada com deslocamento, remoção condicional com callback
+  - Merge, busca binária, map, reduce, split de strings
+  - Vector de structs, ordenação com comparator (qsort)
+  - Mini banco de dados em memória, quicksort manual
+  - Destaques: Quicksort implementado do zero, uso de callbacks para padronizar inserção
+- Reflexão: arrays dinâmicos foram a base para entender por que listas encadeadas existem
+
 ## [0.7.0] — 2026-08-27
 ### Adicionado
 - 15 exercícios do sub-bloco 07 — Arquivos e I/O (136 a 150)

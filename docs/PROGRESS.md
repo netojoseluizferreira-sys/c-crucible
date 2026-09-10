@@ -1,11 +1,11 @@
-# 📊 Registro de Progresso — The C Crucible (775 exercícios)
+# 📊 Registro de Progresso — The C Crucible (755 exercícios)
 
-> **Progresso geral:** 148 / 775 (19,1%)  
-> **Bloco atual:** Bloco 0 — Fundição do Ferro (em andamento)
+> **Progresso geral:** 165 / 755 (21,9%)  
+> **Bloco atual:** Bloco 1 — Estruturas Lineares e Memória Dinâmica (em andamento)
 
 ---
 
-## Bloco 0 — Fundição do Ferro (170 exercícios)
+## Bloco 0 — Fundição do Ferro (150 exercícios) ✅ CONCLUÍDO
 
 | Data | Exercícios | Tema | Notas |
 |------|-----------|------|-------|
@@ -17,6 +17,8 @@
 | 01-02/06/2026 | 076-106, 109-110 | Ponteiros | A descida ao Inferno do Silício. Ponteiros simples, duplos, triplos, void*, casts, ponteiros para função, tabelas de callbacks, qsort. Arrays 2D acessados via ponteiro simples. Alinhamento de structs, const com ponteiros. Exercícios 107 (Dança Macabra – lista duplamente encadeada) e 108 (Portal do Caos – árvore de decisão) pulados por envolverem estruturas ainda não consolidadas — serão revisitados no Bloco 1 com a devida profundidade. O Paredão dos ponteiros (-Wcast-qual, -Wwrite-strings, -Wstrict-aliasing=3) foi domado. |
 | 23/08/2026 | 111-135 | Alocação Dinâmica | malloc, calloc, realloc, free, memcpy, memmove. Detecção e correção de vazamentos, double free, dangling pointers. Array de ponteiros para strings, matriz dinâmica, cópia profunda. Realloc com loop, realloc para trocar tipo, struct com array dinâmico. Array genérico com void* e memcpy. CRUD de arrays dinâmicos com 10 slots (exercício 135). Intervalo de 3 meses entre commits devido a perda de foco e procrastinação, combatidas constantemente até a retomada da rotina. |
 | 26-27/08/2026 | 136-150 | Arquivos e I/O | Gravador de texto, leitor, copiador, contador de linhas. Escrita e leitura binária. Tamanho de arquivo com fseek/ftell. Atualização seletiva. Bufferização personalizada. CSV manual. Comparador. Inversor binário. Extrator de trecho. Concatenador. Log com append. Frequência de caracteres. Correção de warnings -Wsign-conversion e -Wconversion. Reflexão: conceitos de bufferização e append são universais, mas sintaxe específica de C é ruído para quem não seguirá em C. Sub-bloco concluído. |
+| 28/08/2026 | — | Mudança de ementa | Bloco 0 reduzido de 170 para 150 exercícios. Pré-processador (151-160) e Depuração (161-170) removidos por serem específicos demais de C — foco será em ED e algoritmos, não em particularidades de sistemas embarcados. Exercícios 107 e 108 permanecem adiados para o Bloco 1. |
+| 29/08/2026 | — | Projeto `memalloc` | Início do projeto integrador do Bloco 0. Desenvolvimento em paralelo com o Bloco 1. |
 
 ---
 
@@ -24,7 +26,7 @@
 
 | Data | Exercícios | Tema | Notas |
 |------|-----------|------|-------|
-| | | | |
+| 09-10/09/2026 | 151-165 | Arrays Dinâmicos (Vector) | O bloco mais chato até agora. Vector com capacidade/tamanho, realocação com realloc, inserção no final/início, inserção ordenada com deslocamento, remoção condicional com callback, merge de ordenados, busca binária para inserção, map, reduce, split de strings, Vector de structs, ordenação com comparator (qsort), mini banco de dados em memória com busca/remoção/ordenação (quicksort manual). Destaques: implementação manual do quicksort com pivô em struct, uso consistente de callbacks para padronizar inserção, reflexão sobre por que arrays são contíguos e por que isso torna certas operações caras. Sensação final: alívio por terminar e clareza sobre por que listas encadeadas existem. |
 
 ---
 
@@ -68,7 +70,7 @@
 
 ---
 
-## Projeto Final — `kernel_sim` (opcional, mas glorioso)
+## Projeto Final — `kernel_sim`
 
 | Data | Atividade | Status |
 |------|-----------|--------|
