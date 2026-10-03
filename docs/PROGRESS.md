@@ -1,6 +1,6 @@
 # 📊 Registro de Progresso — The C Crucible (755 exercícios)
 
-> **Progresso geral:** 165 / 755 (21,9%)  
+> **Progresso geral:** 195 / 755 (25,8%)  
 > **Bloco atual:** Bloco 1 — Estruturas Lineares e Memória Dinâmica (em andamento)
 
 ---
@@ -27,6 +27,7 @@
 | Data | Exercícios | Tema | Notas |
 |------|-----------|------|-------|
 | 09-10/09/2026 | 151-165 | Arrays Dinâmicos (Vector) | O bloco mais chato até agora. Vector com capacidade/tamanho, realocação com realloc, inserção no final/início, inserção ordenada com deslocamento, remoção condicional com callback, merge de ordenados, busca binária para inserção, map, reduce, split de strings, Vector de structs, ordenação com comparator (qsort), mini banco de dados em memória com busca/remoção/ordenação (quicksort manual). Destaques: implementação manual do quicksort com pivô em struct, uso consistente de callbacks para padronizar inserção, reflexão sobre por que arrays são contíguos e por que isso torna certas operações caras. Sensação final: alívio por terminar e clareza sobre por que listas encadeadas existem. |
+| 30/09 a 03/10/2026 | 166-195 | Lista Encadeada Simples | 30 exercícios. Cada operação nova reusa o que já foi feito. Criar nó, inserir no início/fim, imprimir, contar, buscar. Remover no início/fim/valor/posição — sendo o remover_valor a introdução do ponteiro duplo para eliminar a variável "anterior". Destruir lista com guarda do próximo antes do free. Inverter iterativo (três ponteiros) e recursivo. Floyd (tartaruga e lebre) para detectar ciclo. Merge de listas ordenadas. Concatenar, copiar profundo, contar pares. Elemento do meio com ponteiro lento/rápido. Remover duplicatas com ponteiro duplo. Merge sort em lista — reusou `partir`, `meio` e `mesclar`, ficou em 15 linhas. N-ésimo do fim com dois ponteiros. Dividir ao meio. Pilha (LIFO) e Fila (FIFO) como especializações da lista encadeada. Palíndromo com pilha auxiliar. Intercalar duas listas. Mini sistema de contatos com CRUD. Destaque: o reaproveitamento foi a chave — escrever merge sort depois de ter mesclar e partir foi quase automático. |
 
 ---
 

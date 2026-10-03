@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.9.0] — 2026-10-03
+### Adicionado
+- 30 exercícios do sub-bloco 02 — Lista Encadeada Simples (166 a 195)
+  - Criar nó, inserir no início/fim, imprimir, contar, buscar
+  - Remover no início/fim/valor/posição com ponteiro duplo
+  - Destruir lista, inverter iterativo/recursivo
+  - Floyd (detecção de ciclo), merge de ordenadas, concatenar
+  - Elemento do meio, remover duplicatas, merge sort em lista
+  - N-ésimo do fim, dividir ao meio, pilha com lista encadeada
+  - Fila com lista encadeada (com ponteiro fim para O(1))
+  - Palíndromo com pilha auxiliar, intercalar duas listas
+  - Mini sistema de contatos com inserir, listar, buscar, remover
+  - Destaques: Merge sort em lista reusando funções anteriores, ponteiro duplo
+    para remover sem variável "anterior", Floyd para detecção de ciclo,
+    pilha/fila como especialização da lista encadeada
+- Reflexão: lista encadeada simples é a base de tudo. Cada operação nova reusa
+  o que já foi feito.
+
 ## [0.8.0] — 2026-09-10
 ### Adicionado
 - 15 exercícios do sub-bloco 01 — Arrays Dinâmicos (151 a 165)

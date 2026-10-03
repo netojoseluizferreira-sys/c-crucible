@@ -234,9 +234,9 @@ Cada bloco contém exercícios e um **projeto integrador** que consolida o apren
 
 ---
 
-### 👑 PROJETO FINAL: `kernel_sim` — Simulador de Kernel Minimalista (opcional, mas glorioso)
+### 👑 PROJETO FINAL: `kernel_sim` — Simulador de Kernel Minimalista
 
-> [!warning] Simulador minimalista de kernel em C puro: gerenciador de processos (lista circular), escalonador (heap), sistema de arquivos virtual (árvore), tabela de páginas (hash), grafo de dependências. O teu _Magnum Opus_. Coloca no GitHub e faz os recrutadores chorarem.
+> [!warning] Simulador minimalista de kernel em C puro: gerenciador de processos (lista circular), escalonador (heap), sistema de arquivos virtual (árvore), tabela de páginas (hash), grafo de dependências.
 
 ---
 
@@ -309,14 +309,14 @@ Resultado obrigatório: `All heap blocks were freed -- no leaks are possible`
 | Bloco | Exercícios | Projeto | Status |
 |:------|:----------|:--------|:-------|
 | 0 — Fundição | 150 / 150 | `memalloc` | ✅ **Concluído** 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100% |
-| 1 — Lineares e Memória | 15 / 130 | `textedit` | 🔄 **Em Andamento** 🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜ 12% |
+| 1 — Lineares e Memória | 45 / 130 | `textedit` | 🔄 **Em Andamento** 🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜ 35% |
 | 2 — Raciocínio Algorítmico | 0 / 80 | `solver` | ⬛ Planejado |
 | 3 — Árvores | 0 / 120 | `filesys` | ⬛ Planejado |
 | 4 — Hash | 0 / 65 | `dict` | ⬛ Planejado |
 | 5 — Grafos | 0 / 100 | `metromap` | ⬛ Planejado |
 | 6 — Alocadores e Engenharia | 0 / 115 | `c_forge` | ⬛ Planejado |
 | **Final** | — | `kernel_sim` | ⬛ Planejado |
-| **TOTAL** | **165 / 755** | | 🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜ 22% |
+| **TOTAL** | **195 / 755** | | 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ 26% |
 ---
 
 ## 🧠 Por que C? Por que Agora?
