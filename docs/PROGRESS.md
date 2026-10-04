@@ -19,6 +19,8 @@
 | 26-27/08/2026 | 136-150 | Arquivos e I/O | Gravador de texto, leitor, copiador, contador de linhas. Escrita e leitura binária. Tamanho de arquivo com fseek/ftell. Atualização seletiva. Bufferização personalizada. CSV manual. Comparador. Inversor binário. Extrator de trecho. Concatenador. Log com append. Frequência de caracteres. Correção de warnings -Wsign-conversion e -Wconversion. Reflexão: conceitos de bufferização e append são universais, mas sintaxe específica de C é ruído para quem não seguirá em C. Sub-bloco concluído. |
 | 28/08/2026 | — | Mudança de ementa | Bloco 0 reduzido de 170 para 150 exercícios. Pré-processador (151-160) e Depuração (161-170) removidos por serem específicos demais de C — foco será em ED e algoritmos, não em particularidades de sistemas embarcados. Exercícios 107 e 108 permanecem adiados para o Bloco 1. |
 | 29/08/2026 | — | Projeto `memalloc` | Início do projeto integrador do Bloco 0. Desenvolvimento em paralelo com o Bloco 1. |
+| 29/08/2026 | — | Projeto `memalloc` | Início do projeto integrador do Bloco 0. |
+| 04/10/2026 | — | Projeto `memalloc` finalizado | v1.0. Alocador completo com divisão de blocos, coalescência, testes automatizados e Valgrind limpo. Repositório: https://github.com/netojoseluizferreira-sys/memalloc |
 
 ---
 

@@ -319,6 +319,19 @@ Resultado obrigatório: `All heap blocks were freed -- no leaks are possible`
 | **TOTAL** | **195 / 755** | | 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ 26% |
 ---
 
+## 🏗️ Projetos Integradores
+
+| Bloco | Projeto | Repositório |
+|-------|---------|-------------|
+| 0 | `memalloc` | [github.com/netojoseluizferreira-sys/memalloc](https://github.com/netojoseluizferreira-sys/memalloc) |
+| 1 | `textedit` | (em breve) |
+| 2 | `solver` | (em breve) |
+| 3 | `filesys` | (em breve) |
+| 4 | `dict` | (em breve) |
+| 5 | `metromap` | (em breve) |
+| 6 | `c_forge` | (em breve) |
+| Final | `kernel_sim` | (em breve) |
+
 ## 🧠 Por que C? Por que Agora?
 
 > *"Frameworks passam. O hardware fica."*

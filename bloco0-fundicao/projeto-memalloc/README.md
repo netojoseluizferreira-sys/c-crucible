@@ -24,4 +24,4 @@ e ocupados. O objetivo é entender como o `malloc` funciona por baixo.
 ## Status
 
 ✅ Estrutura inicial criada  
-🔄 Implementação em andamento
+✅ **v1.0 — Completo e testado**

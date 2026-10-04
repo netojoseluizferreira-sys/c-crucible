@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.10.0] — 2026-10-04
+### Adicionado
+- Projeto integrador do Bloco 0: `memalloc`
+  - Alocador de memória em C, do zero
+  - Header público com API (`iniciar`, `alocar`, `liberar`, `estatisticas`)
+  - Implementação com divisão de blocos e coalescência (próximo e anterior)
+  - Exemplo básico de uso
+  - 3 testes automatizados (alocação, liberação, estatísticas)
+  - Makefile com alvos para build, teste e Valgrind
+  - Documentação de arquitetura em `docs/arquitetura.md`
+  - Repositório: https://github.com/netojoseluizferreira-sys/memalloc
+- Reflexão: escrever um alocador do zero consolida todos os conceitos do
+  Bloco 0 — ponteiros, aritmética de bytes, structs, `malloc`/`free`,
+  layout de memória. Depois do `memalloc`, `malloc` deixa de ser caixa-preta.
+
 ## [0.9.0] — 2026-10-03
 ### Adicionado
 - 30 exercícios do sub-bloco 02 — Lista Encadeada Simples (166 a 195)
