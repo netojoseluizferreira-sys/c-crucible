@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.11.0] — 2026-10-12
+### Adicionado
+- 20 exercícios do sub-bloco 03 — Lista Duplamente Encadeada (196 a 215)[cite: 1, 8, 14, 20]
+  - Struct com ponteiros `prox` e `ant`, lista com sentinelas de `cabeca` e `cauda`[cite: 1, 2, 3]
+  - Inserções O(1) nas duas pontas (`inserir_inicio` e `inserir_final`)[cite: 2, 3, 5, 6]
+  - Travessia e impressão bidirecional (ida e volta) para validação de vínculos[cite: 6, 7, 8, 10, 12, 13]
+  - Remoção nas pontas em O(1) (`remover_inicio` e `remover_final`)[cite: 14, 15, 19, 20]
+  - Inserção em posição arbitrária com ajuste de 4 ponteiros[cite: 20, 21, 26]
+  - Remoção por posição com retorno de valor, tratando pontas e nós intermediários
+  - Desalocação total segura sem memory leak ou dangling pointers
+  - Destaques: consistência estrita dos dois sentidos de navegação, atualização correta do ponteiro `ant` no sucessor e manutenção de `cauda` nas remoções finais.
+- Reflexão: gerenciar dois ponteiros dobra a atenção necessária nos casos de borda; qualquer vínculo `ant` esquecido corrompe a integridade da lista na volta.
+
 ## [0.10.0] — 2026-10-04
 ### Adicionado
 - Projeto integrador do Bloco 0: `memalloc`
@@ -54,7 +67,7 @@
   - Destaques: Inversor de arquivo binário com malloc e dois ponteiros, bufferização com setvbuf
 - Reflexão: conceitos de arquivos (bufferização, append, acesso aleatório) são universais,
   mas sintaxe específica de C é ruído para quem não seguirá em C
-- **Reformulação do projeto**: Blocos 1 a 6 reestruturados (750 → 775 exercícios)
+- **Reformulação do projeto**: Blocos 1 a 6 reestruturados (750 → 745 exercícios)
 
 ## [0.6.0] — 2026-08-23
 ### Adicionado

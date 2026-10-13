@@ -24,7 +24,7 @@
 
 ---
 
-## 🗺️ O Plano Diretor — 755 Exercícios em 16 Semanas
+## 🗺️ O Plano Diretor — 745 Exercícios em 16 Semanas
 
 A jornada simula um aprendizado **geológico**: do átomo ao sistema. Cada bloco é uma camada de rocha que só se forma depois que a anterior está sólida.
 
@@ -88,7 +88,7 @@ A jornada simula um aprendizado **geológico**: do átomo ao sistema. Cada bloco
 | 🟡 **Médio** | 189 | 25% | Combina dois ou mais conceitos. |
 | 🟠 **Difícil** | 189 | 25% | Exige insight, modelos não óbvios. |
 | 🔴 **Desafio** | 75 | 10% | Nível olimpíada. Prova de teoremas ou sistemas complexos. |
-| **Total** | **755** | **100%** | |
+| **Total** | **745** | **100%** | |
 
 ---
 
@@ -116,7 +116,7 @@ Cada bloco contém exercícios e um **projeto integrador** que consolida o apren
 
 ---
 
-### 🔗 BLOCO 1 — Estruturas Lineares e Memória Dinâmica (130)
+### 🔗 BLOCO 1 — Estruturas Lineares e Memória Dinâmica (150)
 
 > *"Dados fluem. Quem controla a estrutura e a memória, controla o sistema."*
 
@@ -195,7 +195,7 @@ Cada bloco contém exercícios e um **projeto integrador** que consolida o apren
 
 ---
 
-### 🕸️ BLOCO 5 — Grafos e Algoritmos em Grafos (100)
+### 🕸️ BLOCO 5 — Grafos e Algoritmos em Grafos (105)
 
 > *"O mundo é um grafo. Agora eu posso navegá-lo."*
 
@@ -215,7 +215,7 @@ Cada bloco contém exercícios e um **projeto integrador** que consolida o apren
 
 ---
 
-### ⚡ BLOCO 6 — Alocadores, Layout de Memória e Engenharia de Sistemas (115)
+### ⚡ BLOCO 6 — Alocadores, Layout de Memória e Engenharia de Sistemas (75)
 
 > *"O verdadeiro engenheiro não apenas usa a memória — ele a projeta."*
 
@@ -226,7 +226,6 @@ Cada bloco contém exercícios e um **projeto integrador** que consolida o apren
 | Debugging avançado de memória | 10 |
 | Modularização e APIs | 10 |
 | Performance e otimização | 15 |
-| **Projeto Final Integrador** (`c_forge`) | 40 |
 
 > **🏗️ Projeto Final do Bloco: `c_forge` — Sistema de Gerenciamento de Dados com Cache e Alocadores**
 >
@@ -236,7 +235,7 @@ Cada bloco contém exercícios e um **projeto integrador** que consolida o apren
 
 ### 👑 PROJETO FINAL: `kernel_sim` — Simulador de Kernel Minimalista
 
-> [!warning] Simulador minimalista de kernel em C puro: gerenciador de processos (lista circular), escalonador (heap), sistema de arquivos virtual (árvore), tabela de páginas (hash), grafo de dependências.
+> Simulador minimalista de kernel em C puro: gerenciador de processos (lista circular), escalonador (heap), sistema de arquivos virtual (árvore), tabela de páginas (hash), grafo de dependências.
 
 ---
 
@@ -309,14 +308,14 @@ Resultado obrigatório: `All heap blocks were freed -- no leaks are possible`
 | Bloco | Exercícios | Projeto | Status |
 |:------|:----------|:--------|:-------|
 | 0 — Fundição | 150 / 150 | `memalloc` | ✅ **Concluído** 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100% |
-| 1 — Lineares e Memória | 45 / 130 | `textedit` | 🔄 **Em Andamento** 🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜ 35% |
+| 1 — Lineares e Memória | 65 / 150 | `textedit` | 🔄 **Em Andamento** 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ 43% |
 | 2 — Raciocínio Algorítmico | 0 / 80 | `solver` | ⬛ Planejado |
 | 3 — Árvores | 0 / 120 | `filesys` | ⬛ Planejado |
 | 4 — Hash | 0 / 65 | `dict` | ⬛ Planejado |
-| 5 — Grafos | 0 / 100 | `metromap` | ⬛ Planejado |
-| 6 — Alocadores e Engenharia | 0 / 115 | `c_forge` | ⬛ Planejado |
+| 5 — Grafos | 0 / 105 | `metromap` | ⬛ Planejado |
+| 6 — Alocadores e Engenharia | 0 / 75 | `c_forge` | ⬛ Planejado |
 | **Final** | — | `kernel_sim` | ⬛ Planejado |
-| **TOTAL** | **195 / 755** | | 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ 26% |
+| **TOTAL** | **215 / 745** | | 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ 29% |
 ---
 
 ## 🏗️ Projetos Integradores
@@ -342,7 +341,7 @@ Programar em C sem abstrações:
 - **Conecta software e hardware:** o C é o dialeto comum entre o kernel e o ferro.
 - **Constrói disciplina permanente:** os hábitos adquiridos com `-Wall -Wextra -Werror` se refletem em qualquer outra linguagem.
 
-Após 755 exercícios neste regime, abrir o código-fonte do CPython, do Linux ou de qualquer banco de dados não será um choque — será como entrar em casa.
+Após 745 exercícios neste regime, abrir o código-fonte do CPython, do Linux ou de qualquer banco de dados não será um choque — será como entrar em casa.
 
 ---
 
