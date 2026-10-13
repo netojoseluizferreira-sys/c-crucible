@@ -1,249 +1,219 @@
-# ⚙️ The C Crucible — Da Fundição ao Kernel
+# ⚙️ The C Crucible — Engenharia de Sistemas e Estruturas de Dados em C
 
 [![C Standard](https://img.shields.io/badge/standard-C99%2FC17-blue)](https://en.wikipedia.org/wiki/C99)
 [![Build](https://img.shields.io/badge/build-Wall_Wextra_Werror-red)](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
 [![Memory](https://img.shields.io/badge/memory-Valgrind%20%7C%20Sanitizers-purple)](https://valgrind.org/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
-[![Progress](https://img.shields.io/badge/exerc%C3%ADcios-150%2F755-darkgrey)](./)
+[![Progress](https://img.shields.io/badge/exerc%C3%ADcios-215%2F745-darkgrey)](./PROGRESS.md)
+
+Repositório estruturado de desenvolvimento, análise assintótica e implementação de estruturas de dados e algoritmos de baixo nível em linguagem C pura (padrão ISO C99/C17).
+
+O projeto é constituído por 745 exercícios práticos e 8 projetos integradores desenvolvidos do zero, focando na gestão manual de memória, análise de custo de hardware, ciclo de vida estrito de ponteiros e compilação sem tolerância a avisos (*warnings as errors*).
 
 ---
 
-## 🧬 Filosofia do Projeto
+## 🧬 Filosofia e Diretrizes de Engenharia
 
-> *"A maioria programa para que o código funcione. Eu programo para entender por que cada bit está onde está."*
+> *"A maioria programa para que o código apenas funcione. O objetivo deste projeto é compreender e controlar o custo real de cada instrução, alocação e indireção de memória."*
 
-**The C Crucible** não é um repositório de exercícios. É o **diário de bordo de uma descida ao metal**. Aqui, cada linha de código é uma declaração de guerra contra a ignorância, cada `malloc` é um voto de responsabilidade, cada `segfault` resolvido é uma cicatriz que o sistema operacional me deixou — e que eu agradeço.
-
-### Os Cinco Mandamentos do Ourives
-
-1. **Zero warnings, sempre.** Se o compilador falou, o código está errado. Ponto final.
-2. **Memória é sagrada.** Nenhum byte alocado sem destino. Nenhum ponteiro órfão. `valgrind` limpo é a lei.
-3. **O "porquê" > o "como".** Comentários explicam a decisão de engenharia, não a sintaxe. O futuro eu agradecerá.
-4. **Sem atalhos.** `goto` é permitido — se tu souberes exatamente por que o está usando.
-5. **Beleza no código.** Um algoritmo correto também pode ser elegante. A elegância é respeito pelo leitor.
+1. **Zero Warnings (`-Werror`):** Se o compilador emite um aviso, o código contém uma fragilidade estrutural e deve ser corrigido antes da integração.
+2. **Ciclo de Vida e Ownership:** Toda a região alocada na heap (`malloc`, `calloc`) possui um dono explícito responsável pela sua desalocação (`free`). Ausência de fugas (*zero-leak policy*) e ponteiros órfãos (*dangling pointers*), validados continuamente via Valgrind e sanitizadores.
+3. **Comentários Arquiteturais:** A documentação interna foca em decisões de engenharia, complexidade de tempo/espaço e invariantes estruturais, e não em sintaxe óbvia.
+4. **Implementação do Zero:** Construção de primitivas e algoritmos a partir dos fundamentos antes do consumo de bibliotecas de alto nível.
+5. **Previsibilidade:** Código modular, encapsulado com ponteiros opacos e alinhamento de memória consciente.
 
 ---
 
-## 🗺️ O Plano Diretor — 745 Exercícios em 16 Semanas
+## 🗺️ Mapa de Evolução Arquitetural
 
-A jornada simula um aprendizado **geológico**: do átomo ao sistema. Cada bloco é uma camada de rocha que só se forma depois que a anterior está sólida.
+A progressão parte da sintaxe elementar e avança em direção à engenharia de sistemas operacionais:
 
-### A Descida ao Metal
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │    [Bloco 0] Fundição do Ferro (150)                        │
-│    Tipos, ponteiros, memória → "Eu controlo cada byte"      │
+│    Fundação: ponteiros, arrays, structs, malloc/free e I/O  │
 └───────────────────────┬─────────────────────────────────────┘
-                        │
-                        ▼
+│
+▼
 ┌─────────────────────────────────────────────────────────────┐
-│    [Bloco 1] Estruturas Lineares e Memória Dinâmica (130)   │
-│    Listas, pilhas, filas, ownership → "Eu moldo o fluxo"    │
+│    [Bloco 1] Estruturas Lineares e Memória Dinâmica (150)   │
+│    Ponteiro como ferramenta: ownership de nós, lifetime     │
 └───────────────────────┬─────────────────────────────────────┘
-                        │
-                        ▼
+│
+▼
 ┌─────────────────────────────────────────────────────────────┐
-│    [Bloco 2] Raciocínio Algorítmico, Recursão, Ordenação (80)│
-│    Backtracking, Big-O, ordenação → "Eu penso antes"        │
+│    [Bloco 2] Raciocínio Algorítmico e Ordenação (80)        │
+│    Ponteiro na call stack: recursão, backtracking, Big-O    │
 └───────────────────────┬─────────────────────────────────────┘
-                        │
-                        ▼
+│
+▼
 ┌─────────────────────────────────────────────────────────────┐
 │    [Bloco 3] Árvores e Hierarquias (120)                    │
-│    BST, AVL, Heap, Trie → "Eu domino a hierarquia"          │
+│    Ownership recursivo: travessias, balanceamento (AVL/RB)  │
 └───────────────────────┬─────────────────────────────────────┘
-                        │
-                        ▼
+│
+▼
 ┌─────────────────────────────────────────────────────────────┐
 │    [Bloco 4] Tabelas Hash, Conjuntos e Mapas (65)           │
-│    Hash, colisões, rehash → "Eu transformo chaves em ouro"  │
+│    Alocação de buckets, tratamento de colisões e rehash     │
 └───────────────────────┬─────────────────────────────────────┘
-                        │
-                        ▼
+│
+▼
 ┌─────────────────────────────────────────────────────────────┐
-│    [Bloco 5] Grafos e Algoritmos em Grafos (100)            │
-│    BFS, DFS, Dijkstra, MST → "Eu conecto o mundo"           │
+│    [Bloco 5] Grafos e Algoritmos em Grafos (105)            │
+│    Estruturas compostas: matrizes, listas de adj., caminhos │
 └───────────────────────┬─────────────────────────────────────┘
-                        │
-                        ▼
+│
+▼
 ┌─────────────────────────────────────────────────────────────┐
-│    [Bloco 6] Alocadores, Layout e Engenharia (115)          │
-│    Arenas, pools, profiling → "Eu sou o engenheiro"         │
+│    [Bloco 6] Alocadores, Layout e Engenharia (75)           │
+│    Mecanismo de sistema: arenas, pools, cache e profiling   │
 └───────────────────────┬─────────────────────────────────────┘
-                        │
-                        ▼
+│
+▼
 ┌─────────────────────────────────────────────────────────────┐
 │    [Projeto Final] kernel_sim                               │
-│    O Magnum Opus → "Eu sou o arquiteto da máquina"          │
+│    Simulador de núcleo: escalonamento, memória virtual, VFS │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
-### Distribuição por Nível de Dificuldade
+---
 
-| Nível | Quantidade | Percentual | Objetivo |
-|:------|:----------|:-----------|:---------|
-| 🟢 **Fixação** | 151 | 20% | Memória muscular. Repetição sagrada. |
-| 🔵 **Fácil** | 151 | 20% | Aplicação direta de conceitos. |
-| 🟡 **Médio** | 189 | 25% | Combina dois ou mais conceitos. |
-| 🟠 **Difícil** | 189 | 25% | Exige insight, modelos não óbvios. |
-| 🔴 **Desafio** | 75 | 10% | Nível olimpíada. Prova de teoremas ou sistemas complexos. |
-| **Total** | **745** | **100%** | |
+## 📊 Progresso Atual
+
+| Bloco | Escopo Técnico | Exercícios | Projeto Integrador | Status |
+|:------|:---------------|:-----------|:-------------------|:-------|
+| **0 — Fundição** | Fundamentos, Memória e I/O | 150 / 150 | `memalloc` | ✅ **Concluído** 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100% |
+| **1 — Lineares** | Listas, Pilhas, Filas, Deques | 65 / 150 | `textedit` | 🔄 **Em Andamento** 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ 43% |
+| **2 — Algoritmos** | Recursão, Backtracking, Ordenação | 0 / 80 | `solver` | ⬛ Planeado |
+| **3 — Árvores** | Binárias, BST, AVL, Heaps, Tries | 0 / 120 | `filesys` | ⬛ Planeado |
+| **4 — Hash** | Dispersão, Colisões, Caches | 0 / 65 | `dict` | ⬛ Planeado |
+| **5 — Grafos** | BFS/DFS, Dijkstra, MST, Redes | 0 / 105 | `metromap` | ⬛ Planeado |
+| **6 — Alocadores** | Arenas, Pools, Otimização | 0 / 75 | `c_forge` | ⬛ Planeado |
+| **Final** | Simulador de Kernel Minimalista | — | `kernel_sim` | ⬛ Planeado |
+| **TOTAL** | | **215 / 745** | | 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ **29%** |
 
 ---
 
-## 🔨 Os Blocos de Forja
+## 🔨 Detalhamento dos Blocos e Projetos
 
-Cada bloco contém exercícios e um **projeto integrador** que consolida o aprendizado em um sistema real.
+### BLOCO 0 — Fundição do Ferro (150 exercícios) ✅ CONCLUÍDO
 
-### 🪨 BLOCO 0 — Fundição do Ferro (150) ✅ CONCLUÍDO
+* **Tipos, variáveis e operadores (20):** Declarações, overflow/underflow, promoções implícitas, operadores bitwise em tipos signed e unsigned.
+* **Controle de fluxo (15):** Laços aninhados, laços sem corpo, Duff's device e saltos estruturados com `goto`.
+* **Funções e escopo (20):** Passagem por valor e por referência via ponteiros, recursão simples, pilha de chamadas e funções variádicas.
+* **Arrays e strings (20):** Arrays unidimensionais/multidimensionais, aritmética de ponteiros com arrays, strings terminadas em nulo (`\0`) e recriação da `string.h`.
+* **Ponteiros (35):** Aritmética de endereços, ponteiros para ponteiros (`T**`), ponteiros de funções, `void*`, alinhamento de memória, casts e `char **argv`.
+* **Alocação dinâmica (25):** `malloc`, `calloc`, `realloc`, `free`, `memcpy`, `memmove`, tratamento de double-free, dangling pointers e fugas de memória.
+* **Arquivos e I/O (15):** `fopen`, `fread`, `fwrite`, `fseek`, streams binários vs texto e gestão de bufferização.
 
-> *"Se você não entende ponteiros, você não entende C."*
-
-| Subtema | Qtd | O que é forjado |
-|:--------|:---|:----------------|
-| Tipos, variáveis, operadores | 20 | Declarações, overflow/underflow, promoções implícitas, operadores bitwise em signed/unsigned. |
-| Controle de fluxo (`if`, `switch`, loops) | 15 | Loops aninhados, Duff's device, loops sem corpo, `goto` controlado. |
-| Funções e escopo | 20 | Passagem por valor e por referência (com ponteiros), recursão simples, pilha de chamada, funções variádicas. |
-| Arrays e strings | 20 | Arrays unidimensionais/multidimensionais, aritmética de ponteiros, strings null-terminated, recriação da `string.h`. |
-| Ponteiros (o diabo) | 35 | `void*`, ponteiros para função, `char **argv`, alinhamento, casts, diferença array vs ponteiro. |
-| Alocação dinâmica | 25 | `malloc`/`free`/`realloc`, `memcpy`, `memmove`, double-free, dangling pointers, vazamentos. |
-| Arquivos e I/O | 15 | `fopen`, `fread`, `fwrite`, `fseek`, streams binários vs texto, bufferização. |
-
-> **🏗️ Projeto: `memalloc` — Alocador de Memória Customizado**
->
-> Implementa um alocador próprio usando `sbrk`/`mmap` (simulado), com gerenciamento de blocos livres, coalescência e detecção de double-free. Inclui relatório de fragmentação e performance. *Nada como construir sua própria `malloc` para nunca mais usá-la de forma leviana.*
+> **🏗️ Projeto Integrador: `memalloc` — Alocador Dinâmico Customizado**  
+> Alocador em C puro sobre memória simulada, implementando divisão de blocos (*splitting*), coalescência bidirecional com blocos vizinhos livres, prevenção de double-free e geração de relatórios de fragmentação.  
+> 🔗 Repositório: [github.com/netojoseluizferreira-sys/memalloc](https://github.com/netojoseluizferreira-sys/memalloc)
 
 ---
 
-### 🔗 BLOCO 1 — Estruturas Lineares e Memória Dinâmica (150)
+### BLOCO 1 — Estruturas Lineares e Memória Dinâmica (150 exercícios) 🔄
 
-> *"Dados fluem. Quem controla a estrutura e a memória, controla o sistema."*
+* **Arrays Dinâmicos (15):** Redimensionamento com crescimento geométrico, capacidade vs tamanho, inserção/remoção com deslocamento, custo amortizado e realocação segura.
+* **Listas Encadeadas Simples (30):** Operações básicas, inversão iterativa/recursiva, algoritmo de Floyd (lebre e tartaruga) para deteção de ciclos, merge sort em listas e ownership de nós.
+* **Listas Duplamente Encadeadas (20):** Manipulação de vínculos bidirecionais (`ant` e `prox`), inserções/remoções $O(1)$ com cabeça e cauda, cursor e remoção arbitrária com 4 ponteiros.
+* **Listas Circulares (10):** Estruturas em anel, resolução do problema de Josephus, concatenação e desalocação segura sem recursão infinita.
+* **Pilhas (20):** Implementações em array e lista encadeada, avaliador de expressões pós-fixas/infixas, balanceamento de parênteses e mecanismos genéricos de undo/redo.
+* **Filas (20):** Filas encadeadas e buffers circulares em array com aritmética modular, filas de prioridade simples e análise de desperdício de memória.
+* **Deques (10):** Implementações com lista dupla e array circular, operações em ambas as extremidades e janelas deslizantes (*sliding window*).
+* **Integração, Debugging e Reforço (25):** Resolução de bugs com Valgrind/ASan, heap corruption, implementação de listas com nós sentinelas e simulação de cache LRU linear.
 
-| Estrutura | Qtd | Foco |
-|:----------|:---|:-----|
-| Arrays dinâmicos (vector) | 15 | Redimensionamento, inserção/remoção no meio, capacidade vs tamanho, estratégias de crescimento, `realloc` seguro. |
-| Lista Encadeada Simples | 30 | Inserção, remoção, busca, inversão iterativa/recursiva, detecção de ciclos (Floyd), merge de listas, merge sort, ownership de nós. |
-| Lista Duplamente Encadeada | 20 | Inserção/remoção, inversão, cursor, conversão para árvore binária, remoção sem ponteiro anterior. |
-| Lista Circular | 10 | Inserção, remoção, problema de Josephus, ordenação circular, destruição segura. |
-| Pilha (Stack) | 20 | Implementações com array e lista, avaliador de expressões posfixa/infixa, balanceamento, undo/redo, chamadas de função simuladas. |
-| Fila (Queue) | 20 | Fila com array circular, fila com lista, BFS básico, fila de prioridade simples, análise de desperdício. |
-| Deque | 10 | Duas implementações (lista dupla e array circular), sliding window máximo. |
-| Integração e debugging de memória | 15 | Misturas de pilha+fila, simulação de cache LRU, análise de vazamentos, double free, dangling pointers, heap corruption. |
-| Reforço e extensões | 10 | Estruturas lineares aplicadas, combinação de múltiplas estruturas, listas com nós sentinelas, otimização. |
-
-> **🏗️ Projeto: `textedit` — Editor de Texto em Terminal**
->
-> Editor minimalista estilo Vim, com buffer duplamente encadeado de linhas, undo/redo com pilha, busca com lista, realocação dinâmica. Salva e carrega arquivos. *O teu primeiro software de verdade.*
+> **🏗️ Projeto Integrador: `textedit` — Editor de Texto em Terminal**  
+> Buffer de edição textual modelado com listas duplamente encadeadas para linhas de texto, pilhas dedicadas para histórico de undo/redo, realocação dinâmica de caracteres e persistência em ficheiros.
 
 ---
 
-### 🔁 BLOCO 2 — Raciocínio Algorítmico, Recursão e Ordenação (80)
+### BLOCO 2 — Raciocínio Algorítmico, Recursão e Ordenação (80 exercícios)
 
-> *"Pensar antes de agir. Medir antes de otimizar."*
+* **Recursão Básica e Stack (10):** Rastreamento manual da stack de execução, tempo de vida de variáveis locais e prevenção de *stack overflow*.
+* **Recursão em Strings e Arrays (15):** Busca binária recursiva, permutações, combinações, subconjuntos e avaliação de profundidade de memória.
+* **Backtracking (20):** Exploração do espaço de estados (N-Rainhas, Sudoku, labirintos, coloração de mapas), restrições, restauração de invariantes e podas (*pruning*).
+* **Algoritmos de Ordenação (20):** Implementações do zero: Bubble, Selection, Insertion, Merge Sort (análise de memória auxiliar) e Quick Sort (partições de Lomuto/Hoare); estabilidade e ordenação in-place vs out-of-place.
+* **Análise de Complexidade Integrada (15):** Aplicação de notações assintóticas ($O$, $\Omega$, $\Theta$), resolução de relações de recorrência (Teorema Mestre básico) e trade-offs de tempo/espaço.
 
-| Tema | Qtd |
-|:-----|:---|
-| Recursão básica e stack | 10 |
-| Recursão em strings e arrays | 15 |
-| Backtracking (N-rainhas, labirinto, sudoku) | 20 |
-| Algoritmos de ordenação (Bubble, Merge, Quick, etc.) | 20 |
-| Análise de complexidade integrada (Big-O, Ω, Θ) | 15 |
-
-> **🏗️ Projeto: `solver` — Resolvedor de Labirintos e Sudoku**
->
-> Lê labirinto de arquivo, resolve com DFS recursivo, exibe caminho. Implementa também força bruta para Sudoku. Relatório de complexidade e análise de memória da stack.
+> **🏗️ Projeto Integrador: `solver` — Resolvedor de Labirintos e Sudoku**  
+> Motor de resolução automática por backtracking e DFS, contendo instrumentação para cálculo de chamadas recursivas, profundidade da pilha e relatório de complexidade.
 
 ---
 
-### 🌳 BLOCO 3 — Árvores e Hierarquias (120)
+### BLOCO 3 — Árvores e Hierarquias (120 exercícios)
 
-> *"Tudo é hierarquia. Quem entende a árvore, entende o sistema."*
+* **Árvores Binárias (20):** Travessias em profundidade (pré, em, pós-ordem) e largura (em nível), altura, simetria e reconstrução de árvores a partir de percursos.
+* **Árvores Binárias de Busca - BST (25):** Inserção, busca, remoção com tratamento de nó com dois filhos, predecessor/sucessor e validação de invariantes.
+* **Árvores Balanceadas AVL (20):** Fator de balanceamento, rotações simples e duplas à esquerda/direita, inserção e remoção com garantia de altura $O(\log N)$.
+* **Árvores Rubro-Negras (10):** Invariantes de coloração, recolorações, rotações e comparação empírica de performance com AVL.
+* **Heaps Binários (20):** Max-Heap e Min-Heap indexados em vetor contíguo, rotinas de `heapify`, filas de prioridade e Heap Sort.
+* **Tries (15):** Árvores de prefixo para busca léxica, autocomplete, compressão básica e contagem de ocorrências.
+* **Integração e Conversões (10):** Conversão de listas ordenadas em BSTs balanceadas, heaps em vetores e árvores em listas duplas.
 
-| Estrutura | Qtd | Foco |
-|:----------|:---|:-----|
-| Árvore Binária | 20 | Travessias, altura, contagem, espelhamento, simetria, reconstrução. |
-| BST | 25 | Inserção, remoção, busca, predecessor/sucessor, k-ésimo, validação. |
-| AVL | 20 | Rotações simples/duplas, inserção e remoção com balanceamento, testes de estresse. |
-| Red-Black Tree | 10 | Inserção, remoção, propriedades, comparação empírica com AVL. |
-| Heap (min/max) | 20 | Heapify, heapsort, fila de prioridade, heap de medianas, k-th largest. |
-| Trie | 15 | Inserção, busca, autocomplete, contagem de prefixos, compressão. |
-| Integração e conversões | 10 | Converter lista → BST, heap em array, árvore para lista dupla. |
-
-> **🏗️ Projeto: `filesys` — Sistema de Arquivos em Memória**
->
-> Simula um sistema de arquivos hierárquico com diretórios, arquivos, caminhos e permissões. Comandos: `mkdir`, `touch`, `ls`, `cd`, `rm -r`. Usa árvore n-ária. *O teu próprio "mini kernel" de armazenamento.*
+> **🏗️ Projeto Integrador: `filesys` — Sistema de Arquivos em Memória**  
+> Simulação de um sistema de arquivos hierárquico em RAM estruturado sobre uma árvore n-ária (filho-irmão), suportando navegação e comandos Unix (`mkdir`, `touch`, `ls`, `cd`, `rm -r`).
 
 ---
 
-### 🧪 BLOCO 4 — Tabelas Hash, Conjuntos e Mapas (65)
+### BLOCO 4 — Tabelas Hash, Conjuntos e Mapas (65 exercícios)
 
-> *"A função hash é o coração; a resolução de colisões é a alma."*
+* **Funções Hash (8):** Implementação e teste de uniformidade e dispersão de funções clássicas (`djb2`, `sdbm`, `murmur`, `FNV-1a`).
+* **Encadeamento Separado (15):** Resolução de colisões via listas dinâmicas de buckets, fator de carga ideal e análise de pior caso.
+* **Endereçamento Aberto (15):** Sondagem linear (*linear probing*), quadrática e dispersão dupla (*double hashing*); marcação por *tombstones* e agrupamentos primário/secundário.
+* **Hash Dinâmica (10):** Redimensionamento automático com rehash completo de entradas, monitorização de fator de carga e expansão/contração de memória.
+* **Aplicações e Otimizações (17):** Implementação de mapas, conjuntos, contadores de frequência, tabelas universais e Cache LRU (tabela hash + lista dupla).
 
-| Tema | Qtd |
-|:-----|:---|
-| Funções hash (djb2, sdbm, murmur, FNV) | 8 |
-| Encadeamento separado | 15 |
-| Endereçamento aberto (linear, quadrático, duplo hash) | 15 |
-| Hash dinâmica (rehash, fator de carga) | 10 |
-| Aplicações (cache LRU, conjunto, mapa) | 12 |
-| Extensões e otimizações | 5 |
-
-> **🏗️ Projeto: `dict` — Dicionário e Corretor Ortográfico**
->
-> Dicionário baseado em Trie e Hash, carrega wordlist, busca palavras, sugere correções (distância de Levenshtein com poda). Compara performance entre as estruturas.
+> **🏗️ Projeto Integrador: `dict` — Dicionário e Corretor Ortográfico**  
+> Sistema de consulta léxica integrando tabelas hash e estruturas trie para comparação de velocidade e consumo de memória, com cálculo de distância de edição (Levenshtein) com poda para correção de digitação.
 
 ---
 
-### 🕸️ BLOCO 5 — Grafos e Algoritmos em Grafos (105)
+### BLOCO 5 — Grafos e Algoritmos em Grafos (105 exercícios)
 
-> *"O mundo é um grafo. Agora eu posso navegá-lo."*
+* **Representação (15):** Matrizes de adjacência (grafos densos) versus listas de adjacência dinâmicas (grafos esparsos); direcionados e não-direcionados.
+* **Busca em Largura - BFS (20):** Caminhos mínimos em arestas unitárias, componentes conexos, cálculo de distâncias e teste de bipartição.
+* **Busca em Profundidade - DFS (20):** Deteção de ciclos, ordenação topológica, tempos de descoberta/finalização e componentes fortemente conexos (Tarjan/Kosaraju).
+* **Caminhos Mínimos com Pesos (25):** Algoritmo de Dijkstra implementado com Min-Heap versus array linear, e algoritmo de Bellman-Ford para grafos com custos negativos.
+* **Árvores Geradoras Mínimas - MST (15):** Algoritmos de Kruskal e Prim integrados à estrutura de conjuntos disjuntos (*Disjoint-Set / Union-Find*).
+* **Algoritmos em Redes e Problemas Integrados (10):** Fechamento transitivo, algoritmo de Floyd-Warshall e modelagem de rotas e dependências.
 
-| Algoritmo | Qtd | Foco |
-|:----------|:---|:-----|
-| Representação (matriz, lista adj.) | 15 | Conversão entre formatos, densos vs esparsos. |
-| BFS | 20 | Menor caminho em arestas não ponderadas, componentes conexas, bipartição. |
-| DFS | 20 | Detecção de ciclos, ordenação topológica, componentes fortemente conexas. |
-| Dijkstra | 20 | Com e sem heap, caminho mínimo, restauração de caminho. |
-| Árvore geradora mínima (Kruskal/Prim) | 15 | MST, Union-Find como auxiliar. |
-| Algoritmos extras | 5 | Bellman-Ford, Floyd-Warshall, pesos negativos. |
-| Problemas integrados | 10 | Rede de colaboração, mapa de voos, labirinto. |
-
-> **🏗️ Projeto: `metromap` — Planejador de Rotas de Metrô**
->
-> Carrega mapa de metrô de arquivo, calcula rota mais curta (Dijkstra), rota com menos baldeações (BFS em grafo transformado), estações alcançáveis (DFS). Interface interativa no terminal.
+> **🏗️ Projeto Integrador: `metromap` — Planejador de Rotas de Metrô**  
+> Roteador interativo em terminal baseado em grafos ponderados que calcula caminhos mais curtos em distância (Dijkstra) e rotas com menor quantidade de transbordos (BFS).
 
 ---
 
-### ⚡ BLOCO 6 — Alocadores, Layout de Memória e Engenharia de Sistemas (75)
+### BLOCO 6 — Alocadores, Layout de Memória e Engenharia de Sistemas (75 exercícios)
 
-> *"O verdadeiro engenheiro não apenas usa a memória — ele a projeta."*
+* **Layout de Memória e Representação (15):** Segmentos de processo (Stack, Heap, Data, BSS, Text), alinhamento de tipos, padding de compilador, endianness e inspeção de bytes via GDB.
+* **Alocadores Customizados (25):** Implementação de arenas sequenciais (*bump allocators* com reset), memory pools de tamanho fixo e listas livres (*freelists*) sobre memória pré-alocada.
+* **Debugging Avançado (10):** Diagnóstico sistemático de use-after-free, corrupção de stack/heap, vazamentos ocultos e estouros de limites com Valgrind, ASan e UBSan.
+* **Modularização e APIs (10):** Encapsulamento estrito com ponteiros opacos (*opaque pointers*), ponteiros de funções para callbacks e separação de contratos públicos (`.h`) da implementação (`.c`).
+* **Performance e Otimização de Hardware (15):** Padrões de acesso à memória com alta localidade espacial/temporal, minimização de falhas de cache L1/L2/L3, uso do qualificador `restrict` e profiling com `perf`/`gprof`.
 
-| Tema | Qtd |
-|:-----|:---|
-| Layout de memória e representação | 15 |
-| Alocadores customizados (pools, arenas, freelists) | 25 |
-| Debugging avançado de memória | 10 |
-| Modularização e APIs | 10 |
-| Performance e otimização | 15 |
-
-> **🏗️ Projeto Final do Bloco: `c_forge` — Sistema de Gerenciamento de Dados com Cache e Alocadores**
->
-> Um sistema completo (mini banco de dados chave-valor ou servidor de cache) que integra alocadores customizados, estruturas de dados otimizadas, APIs bem projetadas e análise de performance. É a prova final de que dominas a memória e a engenharia de software em C.
+> **🏗️ Projeto Integrador Obrigatório: `c_forge` — Servidor de Dados com Cache e Alocadores**  
+> Sistema de armazenamento chave-valor de alta performance que opera sobre pools de memória customizados e estruturas de dados otimizadas, eliminando a sobrecarga de chamadas de sistema repetitivas.
 
 ---
 
 ### 👑 PROJETO FINAL: `kernel_sim` — Simulador de Kernel Minimalista
 
-> Simulador minimalista de kernel em C puro: gerenciador de processos (lista circular), escalonador (heap), sistema de arquivos virtual (árvore), tabela de páginas (hash), grafo de dependências.
+> Projeto integrador final unificando todos os conceitos da trilha:
+> * **Gerenciador de Processos:** Fila circular de tarefas com blocos de controle de processo (PCB).
+> * **Escalonador:** Fila de prioridades com Heap binário para controle cooperativo/preemptivo.
+> * **Gerência de Memória Virtual:** Simulação de paginação e tradução de endereços via tabelas de dispersão.
+> * **Sistema de Arquivos:** VFS em memória suportado por árvores n-árias.
+> * **Resolução de Dependências:** Grafo de recursos e tarefas com análise de bloqueios (*deadlocks*).
 
 ---
 
-# 🛡️ Dicionário das Flags de Compilação
+## 🛡️ Políticas de Compilação e Qualidade
 
-## O Paredão Atual
-
-Todo código neste repositório é compilado com as seguintes flags:
+Todo o código é compilado com as diretivas estritas do GCC:
 
 ```bash
 gcc -std=c99 -Wall -Wextra -Werror -pedantic \
@@ -253,127 +223,37 @@ gcc -std=c99 -Wall -Wextra -Werror -pedantic \
     -Wcast-qual -Wwrite-strings -Wstrict-aliasing=3 \
     -fno-common \
     fonte.c -o binario
+
 ```
 
-## Evolução do Paredão
+### Análise Dinâmica e Auditoria
 
-| Sub-Bloco | Flags Adicionadas |
-|:----------|:------------------|
-| 01 — Tipos, Variáveis e Operadores | `-std=c99 -Wall -Wextra -Werror -pedantic` |
-| 03 — Funções e Escopo | `-Wshadow -Wconversion -Wsign-conversion -Wformat=2 -Wmissing-prototypes` |
-| 04 — Arrays e Strings | `-Warray-bounds` |
-| 05 — Ponteiros | `-Wnull-dereference -Wstrict-prototypes -Wold-style-definition -Wcast-qual -Wwrite-strings -Wstrict-aliasing=3 -fno-common` |
-| 06 — Alocação Dinâmica | *(mantido)* |
-
-## Glossário
-
-| Flag | O que faz |
-|------|----------|
-| `-std=c99` | Força o padrão ISO C99. Sem extensões GNU. |
-| `-Wall` | Habilita a maioria dos warnings. |
-| `-Wextra` | Warnings adicionais. |
-| `-Werror` | Transforma warnings em erros. |
-| `-pedantic` | Rejeita código fora do padrão ISO. |
-| `-Wshadow` | Proíbe variáveis com mesmo nome em escopos aninhados. |
-| `-Wconversion` | Proíbe conversões implícitas entre tipos. |
-| `-Wsign-conversion` | Conversões entre signed/unsigned. |
-| `-Wformat=2` | Verifica `printf`/`scanf`. |
-| `-Warray-bounds` | Detecta acesso fora dos limites de arrays. |
-| `-Wmissing-prototypes` | Exige protótipos para todas as funções. |
-| `-Wnull-dereference` | Alerta sobre possível dereferência de ponteiro nulo. |
-| `-Wstrict-prototypes` | Exige protótipos completos (ex: `int f(void)`). |
-| `-Wold-style-definition` | Proíbe definições de funções no estilo K&R. |
-| `-Wcast-qual` | Alerta quando cast remove `const`. |
-| `-Wwrite-strings` | Força strings literais como `const char[]`. |
-| `-Wstrict-aliasing=3` | Regras rigorosas de aliasing. |
-| `-fno-common` | Evita múltiplas definições de variáveis globais. |
-
-## Sanitizers (Sob Demanda)
-
+* **Sanitizadores (Compilação para Testes):**
 ```bash
-gcc -g -fsanitize=address,undefined fonte.c -o binario
+gcc -std=c99 -g -fsanitize=address,undefined fonte.c -o binario_san
+
 ```
 
-## Valgrind (Obrigatório a partir do Sub-Bloco 06)
 
+* **Valgrind (Auditoria de Memória Obrigatória):**
 ```bash
 valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./binario
+
 ```
 
-Resultado obrigatório: `All heap blocks were freed -- no leaks are possible`
 
----
-## 📊 Progresso Atual
-
-| Bloco | Exercícios | Projeto | Status |
-|:------|:----------|:--------|:-------|
-| 0 — Fundição | 150 / 150 | `memalloc` | ✅ **Concluído** 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100% |
-| 1 — Lineares e Memória | 65 / 150 | `textedit` | 🔄 **Em Andamento** 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ 43% |
-| 2 — Raciocínio Algorítmico | 0 / 80 | `solver` | ⬛ Planejado |
-| 3 — Árvores | 0 / 120 | `filesys` | ⬛ Planejado |
-| 4 — Hash | 0 / 65 | `dict` | ⬛ Planejado |
-| 5 — Grafos | 0 / 105 | `metromap` | ⬛ Planejado |
-| 6 — Alocadores e Engenharia | 0 / 75 | `c_forge` | ⬛ Planejado |
-| **Final** | — | `kernel_sim` | ⬛ Planejado |
-| **TOTAL** | **215 / 745** | | 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ 29% |
----
-
-## 🏗️ Projetos Integradores
-
-| Bloco | Projeto | Repositório |
-|-------|---------|-------------|
-| 0 | `memalloc` | [github.com/netojoseluizferreira-sys/memalloc](https://github.com/netojoseluizferreira-sys/memalloc) |
-| 1 | `textedit` | (em breve) |
-| 2 | `solver` | (em breve) |
-| 3 | `filesys` | (em breve) |
-| 4 | `dict` | (em breve) |
-| 5 | `metromap` | (em breve) |
-| 6 | `c_forge` | (em breve) |
-| Final | `kernel_sim` | (em breve) |
-
-## 🧠 Por que C? Por que Agora?
-
-> *"Frameworks passam. O hardware fica."*
-
-Programar em C sem abstrações:
-- **Força a compreensão da memória:** stack, heap, endereçamento, alinhamento.
-- **Expõe o custo real das operações:** cada laço, cada chamada, cada indireção de ponteiro.
-- **Conecta software e hardware:** o C é o dialeto comum entre o kernel e o ferro.
-- **Constrói disciplina permanente:** os hábitos adquiridos com `-Wall -Wextra -Werror` se refletem em qualquer outra linguagem.
-
-Após 745 exercícios neste regime, abrir o código-fonte do CPython, do Linux ou de qualquer banco de dados não será um choque — será como entrar em casa.
+Critério de aprovação: `All heap blocks were freed -- no leaks are possible`.
 
 ---
 
-## 📚 Apêndice: Ferramentas, Livros e Influências
+## 📚 Referências Bibliográficas
 
-### Ferramentas do Ofício
-- **Compilador:** GCC (MinGW no Windows, nativo no Linux)
-- **Depurador:** GDB
-- **Analisador de memória:** Valgrind
-- **Editor:** VS Code com Code Runner e Error Lens
-- **Versionamento:** Git + GitHub (cada exercício aprovado é um commit)
-
-### Livros de Cabeceira
-- *The C Programming Language* — Kernighan & Ritchie (a bíblia)
-- *Understanding and Using C Pointers* — Richard Reese
-- *Expert C Programming: Deep C Secrets* — Peter van der Linden
-- *Algorithms in C* — Robert Sedgewick
-
-### Influências
-- Alan Turing, por me ensinar que o pensamento pode ser máquina.
-- Bjarne Stroustrup, pela frase que é um lembrete diário do perigo e da responsabilidade.
-- Cada professor que me olhou com ceticismo e me deu mais um motivo para continuar.
+* **The C Programming Language** — Brian W. Kernighan & Dennis M. Ritchie
+* **Understanding and Using C Pointers** — Richard Reese
+* **Expert C Programming: Deep C Secrets** — Peter van der Linden
+* **Algorithms in C (Parts 1-4 & Part 5)** — Robert Sedgewick
+* **Computer Systems: A Programmer's Perspective (CS:APP)** — Randal E. Bryant & David R. O'Hallaron
 
 ---
 
-> *"C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do, it blows your whole leg off."*
->
-> — Bjarne Stroustrup
->
-> Este repositório é meu treinamento para nunca, jamais, puxar o gatilho. E se um dia eu precisar fazê-lo, que seja com consciência absoluta do estrago.
-
----
-
-**Forjado por Enkel (Neto) © 2026**
-*"Do átomo ao kernel. Sem atalhos. Sem warnings. Sem desculpas."*
+**Autor:** José Luiz Ferreira Neto (Enkel) © 2026
