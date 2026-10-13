@@ -4,7 +4,7 @@
 [![Build](https://img.shields.io/badge/build-Wall_Wextra_Werror-red)](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
 [![Memory](https://img.shields.io/badge/memory-Valgrind%20%7C%20Sanitizers-purple)](https://valgrind.org/)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
-[![Progress](https://img.shields.io/badge/exerc%C3%ADcios-215%2F745-darkgrey)](./PROGRESS.md)
+[![Progress](https://img.shields.io/badge/exerc%C3%ADcios-225%2F745-darkgrey)](./PROGRESS.md)
 
 Repositório estruturado de desenvolvimento, análise assintótica e implementação de estruturas de dados e algoritmos de baixo nível em linguagem C pura (padrão ISO C99/C17).
 
@@ -87,14 +87,14 @@ A progressão parte da sintaxe elementar e avança em direção à engenharia de
 | Bloco | Escopo Técnico | Exercícios | Projeto Integrador | Status |
 |:------|:---------------|:-----------|:-------------------|:-------|
 | **0 — Fundição** | Fundamentos, Memória e I/O | 150 / 150 | `memalloc` | ✅ **Concluído** 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 100% |
-| **1 — Lineares** | Listas, Pilhas, Filas, Deques | 65 / 150 | `textedit` | 🔄 **Em Andamento** 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ 43% |
+| **1 — Lineares** | Listas, Pilhas, Filas, Deques | 75 / 150 | `textedit` | 🔄 **Em Andamento** 🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜ 50% |
 | **2 — Algoritmos** | Recursão, Backtracking, Ordenação | 0 / 80 | `solver` | ⬛ Planeado |
 | **3 — Árvores** | Binárias, BST, AVL, Heaps, Tries | 0 / 120 | `filesys` | ⬛ Planeado |
 | **4 — Hash** | Dispersão, Colisões, Caches | 0 / 65 | `dict` | ⬛ Planeado |
 | **5 — Grafos** | BFS/DFS, Dijkstra, MST, Redes | 0 / 105 | `metromap` | ⬛ Planeado |
 | **6 — Alocadores** | Arenas, Pools, Otimização | 0 / 75 | `c_forge` | ⬛ Planeado |
 | **Final** | Simulador de Kernel Minimalista | — | `kernel_sim` | ⬛ Planeado |
-| **TOTAL** | | **215 / 745** | | 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜ **29%** |
+| **TOTAL** | | **225 / 745** | | 🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜ **30%** |
 
 ---
 

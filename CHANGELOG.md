@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.12.0] — 2026-10-13
+### Adicionado
+- 10 exercícios do sub-bloco 04 — Lista Circular (216 a 225)
+  - Estrutura de anel com fechamento cíclico (`cauda->prox = cabeca`)
+  - Inserção em O(1) no início e fim mantendo integridade do anel
+  - Remoção na cabeça com atualização do ponteiro circular da cauda
+  - Resolução do problema de Josephus (passo k com eliminação de nós)
+  - Detecção de ciclos e algoritmos de rotação e concatenação circular
+  - Destruição segura e desalocação total quebrando a referência cíclica para evitar laço infinito
+  - Destaques: garantia de terminação de loops em estruturas sem terminação por NULL e prevenção estrita de memory leaks na destruição em anel.
+- Reflexão: listas circulares forçam uma disciplina rígida de condições de parada; esquecer que a lista não termina em NULL transforma qualquer travessia em um loop infinito ou double-free.
+
 ## [0.11.0] — 2026-10-12
 ### Adicionado
 - 20 exercícios do sub-bloco 03 — Lista Duplamente Encadeada (196 a 215)[cite: 1, 8, 14, 20]
