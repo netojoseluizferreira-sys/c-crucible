@@ -1,6 +1,6 @@
 # 📊 Registro de Progresso — The C Crucible (745 exercícios)
 
-> **Progresso geral:** 225 / 745 (30,2%)  
+> **Progresso geral:** 245 / 745 (32,9%)  
 > **Bloco atual:** Bloco 1 — Estruturas Lineares e Memória Dinâmica (em andamento)
 
 ---
@@ -32,7 +32,7 @@
 | 30/09 a 03/10/2026 | 166-195 | Lista Encadeada Simples | 30 exercícios. Cada operação nova reusa o que já foi feito. Criar nó, inserir no início/fim, imprimir, contar, buscar. Remover no início/fim/valor/posição — sendo o remover_valor a introdução do ponteiro duplo para eliminar a variável "anterior". Destruir lista com guarda do próximo antes do free. Inverter iterativo (três ponteiros) e recursivo. Floyd (tartaruga e lebre) para detectar ciclo. Merge de listas ordenadas. Concatenar, copiar profundo, contar pares. Elemento do meio com ponteiro lento/rápido. Remover duplicatas com ponteiro duplo. Merge sort em lista — reusou `partir`, `meio` e `mesclar`, ficou em 15 linhas. N-ésimo do fim com dois ponteiros. Dividir ao meio. Pilha (LIFO) e Fila (FIFO) como especializações da lista encadeada. Palíndromo com pilha auxiliar. Intercalar duas listas. Mini sistema de contatos com CRUD. Destaque: o reaproveitamento foi a chave — escrever merge sort depois de ter mesclar e partir foi quase automático. |
 | 04 a 12/10/2026 | 196-215 | Lista Duplamente Encadeada | 20 exercícios. O salto para navegação bidirecional. Struct NoDuplo com prox e ant, struct ListaDupla com cabeca e cauda para garantir O(1) nas duas extremidades. Inserção no início e final mantendo integridade. Travessia para frente e para trás provando simetria dos nós. Remoção nas pontas (remover_inicio e remover_final) atualizando cabeca/cauda e limpando referências ant/prox para evitar dangling pointers. Inserção por posição com ajuste de 4 ponteiros simultâneos. Remoção por posição com retorno do valor removido e tratamento de nós órfãos. Destruição segura com liberação nó a nó. Destaque: a disciplina de sempre atualizar o ant do sucessor e nunca perder a cauda de vista. 65/150 do Bloco 1 concluídos (43,3%). |
 | 12 a 13/10/2026 | 216-225 | Lista Circular | 10 exercícios. Fechamento de anel. Inserção no início e no final com atualização contínua do último nó apontando para a cabeça. Remoção com realinhamento da cauda. Resolução clássica do problema de Josephus com contagem modular e remoção in-place. Concatenação de dois anéis e destruição segura da lista quebrando o ciclo antes da liberação nó a nó. Destaque: controle rígido da condição de parada de laços (atual != cabeca) e prevenção de laços infinitos na desalocação. Metade exata do Bloco 1 liquidada (75/150). |
-
+| 13/10/2026 | 226-245 | Pilhas | 20 exercícios. A consolidação da disciplina LIFO em duas frentes: array estático/dinâmico e lista simplesmente encadeada. Primitivas canônicas: topo, push, pop e peek com tratamento de underflow/overflow. Conversão de expressões e notação polonesa reversa (RPN). Validação de delimitadores e parênteses balanceados com rastreamento de estados. Destruição segura nó a nó com prevenção estrita de use-after-free e memory leaks (Valgrind limpo). 95/150 do Bloco 1 concluídos (63,3%). |
 ---
 
 ## Bloco 2 — Raciocínio Algorítmico, Recursão e Ordenação (80 exercícios)

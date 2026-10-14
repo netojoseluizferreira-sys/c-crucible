@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.13.0] — 2026-10-13
+### Adicionado
+- 20 exercícios do sub-bloco 05 — Pilha (226 a 245)
+  - Implementações de Pilha com array contíguo e lista encadeada simples
+  - Operações primitivas O(1): `push`, `pop`, `peek`/`topo` e `destruir_pilha`
+  - Tratamento rigoroso de underflow (pilha vazia) e overflow (capacidade esgotada)
+  - Validador sintático de delimitadores e aninhamento de parênteses/chaves/colchetes
+  - Avaliação de expressões em Notação Polonesa Reversa (RPN / pós-fixa)
+  - Máquina de estados baseada em pilha e inversão de sequências
+  - Auditoria completa de memória via Valgrind: zero leaks e zero dangling pointers
+  - Destaques: desacoplamento do dado armazenado e consolidação do padrão de extração de valor antes da desalocação do nó no `pop`.
+- Reflexão: pilhas são o espelho direto da call stack do hardware; entender seu ciclo de vida em C transforma a compreensão de recursão e avaliação de expressões em pura mecânica de ponteiros e registradores.
+
 ## [0.12.0] — 2026-10-13
 ### Adicionado
 - 10 exercícios do sub-bloco 04 — Lista Circular (216 a 225)
